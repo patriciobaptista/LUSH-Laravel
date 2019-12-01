@@ -48,4 +48,4 @@ Route::get('/home', function(){
   return view('/auth/login');
 });
 
-Route::post('/home', 'HomeController@index')->name('home');
+Route::post('/home', 'HomeController@index');
