@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type = "text/css" href="{{ asset('css/about.css') }}">
-    <title>Nosotros</title>
+    <title>LUSH - Nosotros</title>
   </head>
   <body>
-    <section id="main" class="container-fluid">
+    <section id="main" class="container">
       <div class="row">
-        <div class="col-12 text-center pt-5 mt-3">
+        <div class="col-12 text-center pt-5 mt-5">
           <h1>nuestra compania</h1>
           </div>
           <div class="feature_divider">
@@ -44,15 +44,14 @@
               <h3>Patricio Baptista</h3>
               <div class="feature_divider_small">
               </div>
-              <p>Director de Marketing</p>
+              <p>Marketing Director</p>
             </div>
-
             <div class="col-12 col-md-12 col-lg-6 text-center">
               <img class="imagen" src="{{asset('/storage/leo.png')}}" alt="foto">
               <h3>Leo Bagiu</h3>
               <div class="feature_divider_small">
               </div>
-              <p>Director de Marketing</p>
+              <p>Product Manager</p>
             </div>
             <div class="feature_divider_small">
             </div>
@@ -67,5 +66,4 @@
             </div>
       </section>
   </body>
-  </html>
 @endsection

@@ -39,9 +39,21 @@ Route::get('/destinos', function(){
     return view('destinations');
 });
 
-Route::get('/carrito', "CartController@verify");
+Route::get('/faq', function(){
+    return view('faq');
+});
 
+Route::get('/contacto', function(){
+    return view('contact');
+});
 
+Route::get('/perfil', function(){
+    return view('userprofile');
+});
+
+Route::get('/carrito', function(){
+    return view('cart');
+});
 Auth::routes();
 
 Route::get('/home', function(){
