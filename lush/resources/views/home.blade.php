@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layout')
 
-@section('content')
+@section('main')
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center pt-5">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+            <div class="card mt-5">
+                <div class="card-header">LUSH LUXURY TRAVEl</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,8 +14,10 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Ya estas logueado, clickea aqui para volver al sitio
+
                 </div>
+                <button class"btn btn-primary" type="button" name="button"><a href="/lush">Volver</a></button>
             </div>
         </div>
     </div>

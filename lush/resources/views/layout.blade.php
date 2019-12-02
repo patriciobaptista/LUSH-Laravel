@@ -52,13 +52,13 @@
              <li><a href="/nosotros">Nosotros</a></li>
              <li><a href="/faq">Preguntas Frecuentes</a></li>
              <li><a href="/destinos">Destinos</a></li>
-             <li style=<?=$display?>><a href="/registro">Registro</a></li>
+             <li style=<?=$display?>><a href="{{ route('register') }}">Registro</a></li>
              <li style=<?=$displayAdmin?>><a href="../admin/ABM.php"> Editar viajes </a></li>
            </ul>
          </div>
          <div class="offset col-4 col-md-3 text-right pr-4" style="display:inline-block">
            <ul class="pl-0 mt-3 mb-0 pb-0">
-             <li style="<?=$display?>" ><a href="/login">Log in</a></li>
+             <li style="<?=$display?>" ><a href="{{ route('login') }}">Log in</a></li>
 
 
              <?php  if(isset($_COOKIE["autologin"])): ?>
@@ -116,8 +116,8 @@
                  <a class="dropdown-item" href="../perfil/perfil.php">Perfil</a>
                  <?php } ?>
              <a class="dropdown-item styledropdown" href="/destinos">Destinos</a>
-             <a style="<?=$display?>"class="dropdown-item" href="/registro">Registro</a>
-             <a style="<?=$display?>" class="dropdown-item" href="/login">Log in</a>
+             <a style="<?=$display?>"class="dropdown-item" href="{{ route('register') }}">Registro</a>
+             <a style="<?=$display?>" class="dropdown-item" href="{{ route('login') }}">Log in</a>
              <a class="dropdown-item" href="/carrito">Mi carrito</a>
              <a style="<?=$displayAdmin?>"class="dropdown-item styledropdown" href="../admin/ABM.php">Editar viajes</a>
              <a class="dropdown-item" href="/faq">Nosotros/FAQ</a>

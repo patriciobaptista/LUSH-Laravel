@@ -27,13 +27,7 @@ Route::get('/nosotros', function(){
     return view('about');
 });
 
-Route::get('/registro', function(){
-    return view('register');
-});
 
-Route::get('/login', function(){
-    return view('login');
-});
 
 Route::get('/destinos', function(){
     return view('destinations');
@@ -56,7 +50,7 @@ Route::get('/carrito', function(){
 });
 Auth::routes();
 
-Route::get('/home', function(){
+Route::get('/login', function(){
   return view('/auth/login');
 });
 
