@@ -11,59 +11,22 @@
 |
 */
 
-Route::get('/inicio', function () {
-    return view('welcome');
-});
-
-Route::get('/layout', function(){
-    return view('layout');
-});
-
-Route::get('/lush', function(){
-    return view('index');
-});
-
-Route::get('/nosotros', function(){
-    return view('about');
-});
-
-
-
-Route::get('/destinos', function(){
-    return view('destinations');
-});
-
-Route::get('/faq', function(){
-    return view('faq');
-});
-
-Route::get('/contacto', function(){
-    return view('contact');
-});
-
-Route::get('/perfil', function(){
-    return view('userprofile');
-});
-
-Route::get('/carrito', function(){
-    return view('cart');
-});
 Auth::routes();
 
-Route::get('/login', function(){
-  return view('/auth/login');
-});
+Route::view('/', 'index');
 
-Route::post('/home', 'HomeController@index');
+Route::view('/nosotros', 'about');
+
+Route::view('/destinos', 'destinations');
+
+Route::view('/faq', 'faq');
+
+Route::view('/contacto', 'contact');
+
+Route::view('/perfil', 'userprofile');
+
+Route::view('/carrito', 'cart');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::view('/login', 'login');
