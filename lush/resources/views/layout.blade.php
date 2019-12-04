@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Raleway&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/34b9ea8fdc.js"></script>
     <link rel="stylesheet" type = "text/css" href="{{ asset('css/general.css') }}">
+
   </head>
   <body>
     <?php
@@ -23,37 +24,46 @@
          <div class="col-2 col-md-2" style="display:inline-block">
            <a href="/"><img class="logo-left pull-left ml-3" src="{{asset('/storage/logo-blanco.png')}}" style="display:inline-block"alt="logo"></a>
          </div>
+         @guest
          <div class="col-6 col-md-7 text-center" style="display:inline-block">
            <ul class="mt-3">
              <li><a href="/nosotros">Nosotros</a></li>
              <li><a href="/faq">Preguntas Frecuentes</a></li>
              <li><a href="/destinos">Destinos</a></li>
+
              <li style=><a href="/register">Registro</a></li>
         <!-- <li style=<><a href="../admin/ABM.php"> Editar viajes </a></li> -->
            </ul>
          </div>
          <div class="offset col-4 col-md-3 text-right pr-4" style="display:inline-block">
            <ul class="pl-0 mt-3 mb-0 pb-0">
+             @if (Route::has('login'))
              <li style="" ><a href="/login">Log in</a></li>
-
-          <!--   <div id="dropdown-big" class="dropdown">
-                   <a class="btn dropdown-toggle pr-0 styledropdown" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                     Bienvenido
+            @endif
+            @else
+          <div id="dropdown-big" class="dropdown col-10 text-right">
+                   <a class="btn dropdown-toggle pr-2 pt-3 styledropdown" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Bienvenido {{ Auth::user()->name }}
                    </a>
 
                    <div class="dropdown-menu" style="background-color: rgba(108, 108, 106, 0.5);" aria-labelledby="dropdownMenuLink">
                      <a class="dropdown-item styledropdown" href="/perfil">Perfil</a>
                      <a class="dropdown-item" href="/carrito"><i class="fas fa-shopping-cart"></i></a>
-                 ADMIN   <a style=""class="dropdown-item styledropdown" href="../admin/ABM.php">Editar viajes</a>
-                     <a class="dropdown-item styledropdown" href="../logout/logout.php"> Cerrar Sesion </a>
+                 <!--   <a style=""class="dropdown-item styledropdown" href="../admin/ABM.php">Editar viajes</a> -->
+                     <a class="dropdown-item styledropdown" href="" onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();">
+                      > cerrar cesion</a>
+                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                          @csrf
+                      </form>
                    </div>
              </div>
 
-           -->
 
-             <li><a style=""href="/carrito"><i class="fas fa-shopping-cart"></i></a></li>
 
+          <!--    <li><a style=""href="/carrito"><i class="fas fa-shopping-cart"></i></a></li> -->
            </ul>
+           @endguest
          </div>
        </nav>
        <div id="dropdown-small" class="dropdown">
@@ -86,7 +96,6 @@
        x.classList.toggle("change");
      }
      </script>
-
     <main>
       @yield('main')
     </main>
