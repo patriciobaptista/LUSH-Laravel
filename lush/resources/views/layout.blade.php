@@ -7,11 +7,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Raleway&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/34b9ea8fdc.js"></script>
     <link rel="stylesheet" type = "text/css" href="{{ asset('css/general.css') }}">
-<<<<<<< HEAD
     @yield('title')
-=======
 
->>>>>>> aa8d837df01801c8322c7589cb9ca409bec707d4
   </head>
   <body>
 
@@ -99,14 +96,7 @@
        x.classList.toggle("change");
      }
      </script>
-<<<<<<< HEAD
-
-<main id="main">
-
-
-=======
     <main>
->>>>>>> aa8d837df01801c8322c7589cb9ca409bec707d4
       @yield('main')
 </main>
 

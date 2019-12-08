@@ -10,13 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-<<<<<<< HEAD
-
-=======
 Route::get('logout', 'LoginController@logout');
 Route::post('logout', 'LoginController@logout');
 Auth::routes();
->>>>>>> aa8d837df01801c8322c7589cb9ca409bec707d4
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -39,18 +37,5 @@ Route::view('/contacto', 'contact');
 Route::get('/perfil', 'UserController@userprofile');
 Route::post('/perfil', 'UserController@updateAvatar');
 
-<<<<<<< HEAD
-Auth::routes();
-
-Route::view('/login', 'login');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::view('/ABM', 'ABM');
-=======
-
 
 Route::view('/carrito', 'cart');
->>>>>>> aa8d837df01801c8322c7589cb9ca409bec707d4

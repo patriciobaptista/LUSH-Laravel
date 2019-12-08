@@ -6,11 +6,9 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Contracts\Auth\CanResetPassword;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-<<<<<<< HEAD
-=======
 use App\Direccion;
 use App\carddetail;
->>>>>>> aa8d837df01801c8322c7589cb9ca409bec707d4
+
 
 class User extends Authenticatable
 {
@@ -42,8 +40,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-<<<<<<< HEAD
-=======
+
 
     public function direccion(){
       return $this->hasOne('App\Direccion', 'id_user');
@@ -52,5 +49,5 @@ class User extends Authenticatable
     public function carddetail(){
       return $this->hasOne('App\carddetail', 'id_user');
     }
->>>>>>> aa8d837df01801c8322c7589cb9ca409bec707d4
+
 }
