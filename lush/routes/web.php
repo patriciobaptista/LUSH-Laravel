@@ -26,6 +26,9 @@ Route::view('/faq', 'faq');
 
 Route::view('/contacto', 'contact');
 
-Route::view('/perfil', 'userprofile');
+Route::get('/perfil', 'UserController@userprofile');
+Route::post('/perfil', 'UserController@updateAvatar');
+
+
 
 Route::view('/carrito', 'cart');

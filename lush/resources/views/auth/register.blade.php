@@ -60,8 +60,9 @@
                           <input type="password" name="password_confirmation" class="form-control" id="password-confirm" required autocomplete="new-password"value="">
                       </div>
                       <div class="form-group">
-                          <label for="profilepic">Subir foto de perfil: </label>
-                          <input type="file" class="form-control" id="profilepic" name="profilepic" aria-describedby="nameHelp" value="">
+                          <label style="display:none" for="avatar">Subir foto de perfil: </label>
+                          <input type="file" style="display:none" class="form-control" id="profilepic" name="avatar" aria-describedby="nameHelp" value="">
+                          <input type="hidden" name="_token" value="{{ csrf_token() }}">
                       </div>
                       <div class="form-group form-check">
                           <input type="checkbox" class="form-check-input" id="checkfinal" name="checkfinal" value="">

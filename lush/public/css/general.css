@@ -52,6 +52,12 @@ main{
   text-decoration: none;
   text-shadow: rgba(0,0,0,.01) 0 0 0.5px;
 }
+
+#header .auth{
+padding-right: 5px;
+}
+
+
 #header .fas{
   color: white;
 }

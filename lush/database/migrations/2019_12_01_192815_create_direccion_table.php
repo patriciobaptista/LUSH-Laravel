@@ -15,8 +15,9 @@ class CreateDireccionTable extends Migration
      {
        Schema::create('direccion', function (Blueprint $table) {
            $table->increments('id');
-           $table->string('street');
-           $table->integer('apartment');
+           $table->string('street')->nullable();
+           $table->string('apartment')->nullable();
+           $table->string('postcode')->nullable();
            $table->integer('id_user')->unsigned();
            $table->foreign('id_user')->references('id')->on('users');
            $table->timestamps();
