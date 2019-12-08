@@ -7,7 +7,11 @@
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Raleway&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/34b9ea8fdc.js"></script>
     <link rel="stylesheet" type = "text/css" href="{{ asset('css/general.css') }}">
+<<<<<<< HEAD
     @yield('title')
+=======
+
+>>>>>>> aa8d837df01801c8322c7589cb9ca409bec707d4
   </head>
   <body>
 
@@ -22,41 +26,47 @@
 
      <header id="header" class="container-fluid">
        <nav class="nav row pt-0 navbar-light bg-faded">
-         <div class="col-2 col-md-2" style="display:inline-block">
+         <div class="col-2 col-md-2 col-lg-2" style="display:inline-block">
            <a href="/"><img class="logo-left pull-left ml-3" src="{{asset('/storage/logo-blanco.png')}}" style="display:inline-block"alt="logo"></a>
          </div>
-         <div class="col-6 col-md-7 text-center" style="display:inline-block">
+         <div class="col-6 col-md-7 col-lg-6 text-center" style="display:inline-block">
            <ul class="mt-3">
              <li><a href="/nosotros">Nosotros</a></li>
              <li><a href="/faq">Preguntas Frecuentes</a></li>
              <li><a href="/destinos">Destinos</a></li>
+             @guest
+              @if (Route::has('register'))
              <li style=><a href="/register">Registro</a></li>
         <!-- <li style=<><a href="../admin/ABM.php"> Editar viajes </a></li> -->
+              @endif
            </ul>
          </div>
-         <div class="offset col-4 col-md-3 text-right pr-4" style="display:inline-block">
-           <ul class="pl-0 mt-3 mb-0 pb-0">
-             <li style="" ><a href="/login">Log in</a></li>
 
-          <!--   <div id="dropdown-big" class="dropdown">
-                   <a class="btn dropdown-toggle pr-0 styledropdown" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                     Bienvenido
+         <div class="offset col-4 col-md-3 col-lg-4 pr-4 text-right" style="display:inline-block">
+          <ul class="pl-0 mt-3 mb-0 pb-0">
+            <li style="" ><a href="/login">Log in</a></li>
+          </ul>
+           @else
+          <div id="dropdown-big" class="dropdown col-lg-4 text-right">
+                   <a class="btn dropdown-toggle pr-2 pt-3 styledropdown" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    bienvenido {{ Auth::user()->name }}
                    </a>
 
                    <div class="dropdown-menu" style="background-color: rgba(108, 108, 106, 0.5);" aria-labelledby="dropdownMenuLink">
                      <a class="dropdown-item styledropdown" href="/perfil">Perfil</a>
                      <a class="dropdown-item" href="/carrito"><i class="fas fa-shopping-cart"></i></a>
-                 ADMIN   <a style=""class="dropdown-item styledropdown" href="../admin/ABM.php">Editar viajes</a>
-                     <a class="dropdown-item styledropdown" href="../logout/logout.php"> Cerrar Sesion </a>
+                 <!--   <a style=""class="dropdown-item styledropdown" href="../admin/ABM.php">Editar viajes</a> -->
+                     <a class="dropdown-item styledropdown" href="" onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();">
+                       cerrar cesion</a>
+                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                          @csrf
+                      </form>
                    </div>
              </div>
-
-           -->
-
-             <li><a style=""href="/carrito"><i class="fas fa-shopping-cart"></i></a></li>
-
-           </ul>
+           @endguest
          </div>
+
        </nav>
        <div id="dropdown-small" class="dropdown">
 
@@ -89,10 +99,14 @@
        x.classList.toggle("change");
      }
      </script>
+<<<<<<< HEAD
 
 <main id="main">
 
 
+=======
+    <main>
+>>>>>>> aa8d837df01801c8322c7589cb9ca409bec707d4
       @yield('main')
 </main>
 
@@ -117,7 +131,6 @@
           </ul>
         </div>
       </footer>
-
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
