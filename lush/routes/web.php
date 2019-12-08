@@ -16,7 +16,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::view('/', 'index');
 
@@ -36,6 +35,12 @@ Route::view('/contacto', 'contact');
 
 Route::get('/perfil', 'UserController@userprofile');
 Route::post('/perfil', 'UserController@updateAvatar');
+
+Route::get('/ABM/main', 'ABMcontroller@index');
+
+Route::get('ABM/edit/{id}', 'ABMcontroller@ABMdirect');
+
+Route::post('/ABM/edit', 'ABMcontroller@edit');
 
 
 Route::view('/carrito', 'cart');
