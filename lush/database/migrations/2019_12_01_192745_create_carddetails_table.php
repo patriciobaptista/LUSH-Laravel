@@ -18,8 +18,8 @@ class CreateCardDetailsTable extends Migration
            $table->string('number');
            $table->string('bank');
            $table->string('owner');
-           $table->integer('id_user')->unsigned();
-           $table->foreign('id_user')->references('id')->on('users');
+           $table->integer('user_id')->unsigned();
+           $table->foreign('user_id')->references('id')->on('users');
            $table->timestamps();
        });
    }
@@ -32,7 +32,7 @@ class CreateCardDetailsTable extends Migration
    public function down()
    {
      Schema::table("carddetails",function(Blueprint $table) {
-       $table->dropForeign('carddetails_id_user_foreign');
+       $table->dropForeign('carddetails_user_id_foreign');
      });
        Schema::dropIfExists('carddetails');
    }

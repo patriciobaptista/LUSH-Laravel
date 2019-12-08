@@ -16,8 +16,8 @@ class CreateTripIncludesTable extends Migration
        Schema::create('tripincludes', function (Blueprint $table) {
            $table->increments('id');
            $table->string('includes');
-           $table->integer('id_product')->unsigned();
-           $table->foreign('id_product')->references('id')->on('products');
+           $table->integer('product_id')->unsigned();
+           $table->foreign('product_id')->references('id')->on('products');
            $table->timestamps();
        });
    }
@@ -30,7 +30,7 @@ class CreateTripIncludesTable extends Migration
    public function down()
    {
      Schema::table("tripincludes",function(Blueprint $table) {
-       $table->dropForeign('tripincludes_id_product_foreign');
+       $table->dropForeign('tripincludes_product_id_foreign');
      });
        Schema::dropIfExists('tripincludes');
    }

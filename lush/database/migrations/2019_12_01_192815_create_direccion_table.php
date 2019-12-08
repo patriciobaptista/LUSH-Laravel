@@ -17,8 +17,8 @@ class CreateDireccionTable extends Migration
            $table->increments('id');
            $table->string('street');
            $table->integer('apartment');
-           $table->integer('id_user')->unsigned();
-           $table->foreign('id_user')->references('id')->on('users');
+           $table->integer('user_id')->unsigned();
+           $table->foreign('user_id')->references('id')->on('users');
            $table->timestamps();
        });
    }
@@ -31,7 +31,7 @@ class CreateDireccionTable extends Migration
    public function down()
    {
      Schema::table("direccion",function(Blueprint $table) {
-       $table->dropForeign('direccion_id_user_foreign');
+       $table->dropForeign('direccion_user_id_foreign');
      });
        Schema::dropIfExists('direccion');
    }

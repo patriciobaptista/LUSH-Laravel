@@ -16,8 +16,8 @@ class CreateHighlightsTable extends Migration
         Schema::create('highlights', function (Blueprint $table) {
             $table->increments('id');
             $table->string('includes');
-            $table->integer('id_product')->unsigned();
-            $table->foreign('id_product')->references('id')->on('products');
+            $table->integer('product_id')->unsigned();
+            $table->foreign('product_id')->references('id')->on('products');
             $table->timestamps();
         });
     }
@@ -30,7 +30,7 @@ class CreateHighlightsTable extends Migration
     public function down()
     {
       Schema::table("highlights",function(Blueprint $table) {
-        $table->dropForeign('highlights_id_product_foreign');
+        $table->dropForeign('highlights_product_id_foreign');
       });
         Schema::dropIfExists('highlights');
     }

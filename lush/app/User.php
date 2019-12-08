@@ -5,7 +5,6 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable
 {
@@ -37,14 +36,4 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-}
-class User extends Model
-{
-public $table = "users";
-public $timestamps = "false";
-public $guarded = [];
-
-$this->name
-
-
 }

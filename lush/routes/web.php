@@ -11,13 +11,18 @@
 |
 */
 
-Auth::routes();
 
 Route::view('/', 'index');
 
 Route::view('/nosotros', 'about');
 
-Route::view('/destinos', 'destinations');
+Route::resource('/destinos', 'ProductsController');
+
+Route::get('/carrito', 'CartController@index');
+
+Route::get('/carrito/{id}', 'CartController@show');
+
+Route::post('/carrito', 'CartController@destroy');
 
 Route::view('/faq', 'faq');
 
@@ -25,8 +30,12 @@ Route::view('/contacto', 'contact');
 
 Route::view('/perfil', 'userprofile');
 
-Route::view('/carrito', 'cart');
-
 Auth::routes();
 
 Route::view('/login', 'login');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::view('/ABM', 'ABM');

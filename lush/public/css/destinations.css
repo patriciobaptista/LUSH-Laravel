@@ -10,6 +10,21 @@ body{
   background-size: cover;
   width: 100%;
   min-height: 686px;
+}
+
+  #main h1{
+    font-family: 'Raleway', monospace;
+    font-size: 35px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .feature_divider {
+      border: solid 2px;
+      display: block;
+      width: 100px;
+      margin: 10px auto;
+      border-color: black;
+  }
 
 }
 .photodad{

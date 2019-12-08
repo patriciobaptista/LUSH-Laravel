@@ -7,8 +7,10 @@
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic|Raleway&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/34b9ea8fdc.js"></script>
     <link rel="stylesheet" type = "text/css" href="{{ asset('css/general.css') }}">
+    @yield('title')
   </head>
   <body>
+
     <?php
 
     $displayAdmin = "display:none";
@@ -81,15 +83,18 @@
          </div>
          <img class="logo-name" src="{{asset('/storage/nombre-blanco.png')}}" alt="">
      </header>
+
      <script>
      function myFunction(x) {
        x.classList.toggle("change");
      }
      </script>
 
-    <main>
+<main id="main">
+
+
       @yield('main')
-    </main>
+</main>
 
 
     <footer id="footer" class="container-fluid row pt-4">

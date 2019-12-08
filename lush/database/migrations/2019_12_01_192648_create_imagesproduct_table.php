@@ -16,8 +16,8 @@ class CreateImagesProductTable extends Migration
       Schema::create('imagesproduct', function (Blueprint $table) {
           $table->increments('id');
           $table->string('name');
-          $table->integer('id_product')->unsigned();
-          $table->foreign('id_product')->references('id')->on('products');
+          $table->integer('product_id')->unsigned();
+          $table->foreign('product_id')->references('id')->on('products');
           $table->timestamps();
       });
   }
@@ -30,7 +30,7 @@ class CreateImagesProductTable extends Migration
   public function down()
   {
     Schema::table("imagesproduct",function(Blueprint $table) {
-      $table->dropForeign('imagesproduct_id_product_foreign');
+      $table->dropForeign('imagesproduct_product_id_foreign');
     });
       Schema::dropIfExists('imagesproduct');
   }
