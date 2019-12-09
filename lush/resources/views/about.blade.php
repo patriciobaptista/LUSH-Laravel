@@ -47,7 +47,7 @@
               <p>Marketing Director</p>
             </div>
             <div class="col-12 col-md-12 col-lg-6 text-center">
-              <img class="imagen" src="{{asset('/storage/leo.png')}}" alt="foto">
+              <img class="imagen" src="{{asset('storage/leo.png')}}" alt="foto">
               <h3>Leo Bagiu</h3>
               <div class="feature_divider_small">
               </div>

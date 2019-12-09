@@ -7,7 +7,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Contracts\Auth\CanResetPassword;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Direccion;
-use App\carddetail;
+use App\Carddetail;
 
 
 class User extends Authenticatable
@@ -20,7 +20,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'surname', 'email', 'password',
+        'name', 'surname', 'email', 'password','is_admin','avatar'
     ];
 
     /**
@@ -47,7 +47,11 @@ class User extends Authenticatable
     }
 
     public function carddetail(){
-      return $this->hasOne('App\carddetail', 'id_user');
+      return $this->hasOne('App\Carddetail', 'id_user');
+    }
+
+    public function isAdmin(){
+      return $this->is_admin;
     }
 
 }

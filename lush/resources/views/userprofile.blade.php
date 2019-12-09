@@ -71,20 +71,20 @@
                        <p>Calle</p>
                      </div>
                      <div class="form-group value col-sm-12 col-m-7 col-lg-7 pt-2">
-                         <input type="text" class="form-control transparent" name="calle" id="calle" value="@if($user->direccion->street == null){{'Ingrese su direccion'}}@else{{$user->direccion->street}}@endif" rows="1"></input>
+                         <input type="text" class="form-control transparent" name="calle" id="calle" value="@if($user->direccion == null){{'Ingrese su direccion'}}@else{{$user->direccion->street}}@endif" rows="1"></input>
                      </div>
 
                     <div class="field col-sm-12 col-m-5 col-lg-5 border-top pt-2">
                       <p>Piso/Depto</p>
                     </div>
                     <div class="form-group value col-sm-12 col-m-7 col-lg-7 pt-2">
-                        <input type="text" class="form-control transparent" name="apartment" id="apartment" value="@if($user->direccion->apartment == null){{'Ingrese su piso/depto'}}@else{{$user->direccion->apartment}}@endif" rows="1"></input>
+                        <input type="text" class="form-control transparent" name="apartment" id="apartment" value="@if($user->direccion == null){{'Ingrese su piso/depto'}}@else{{$user->direccion->apartment}}@endif" rows="1"></input>
                     </div>
                     <div class="field col-sm-12 col-m-5 col-lg-5 border-top pt-2">
                       <p>Codigo Postal</p>
                     </div>
                     <div class="form-group value col-sm-12 col-m-7 col-lg-7 pt-2">
-                        <input type="text" class="form-control transparent" name="postcode" id="postcode" value="@if($user->direccion->postcode == null){{'Ingrese su codigo postal'}}@else{{$user->direccion->postcode}}@endif" rows="1"></input>
+                        <input type="text" class="form-control transparent" name="postcode" id="postcode" value="@if($user->direccion == null){{'Ingrese su codigo postal'}}@else{{$user->direccion->postcode}}@endif" rows="1"></input>
                     </div>
 
               </div>
@@ -99,19 +99,19 @@
                   <p>Banco</p>
                 </div>
                 <div class="form-group value col-sm-12 col-m-7 col-lg-7 pt-2">
-                    <input type="text" class="form-control transparent" name="bank" id="bank" value="@if($user->carddetail->bank == null){{'Ingrese su banco'}}@else{{$user->carddetail->bank}}@endif" rows="1"></input>
+                    <input type="text" class="form-control transparent" name="bank" id="bank" value="@if($user->carddetail == null){{'Ingrese su banco'}}@else{{$user->carddetail->bank}}@endif" rows="1"></input>
                 </div>
                 <div class="field col-sm-12 col-m-5 col-lg-5 border-top pt-2">
                   <p>Nombre Titular</p>
                 </div>
                 <div class="form-group value col-sm-12 col-m-7 col-lg-7 pt-2">
-                    <input type="text" class="form-control transparent" name="owner" id="owner" value="@if($user->carddetail->owner == null){{'Ingrese su nombre como figura en la tarjeta'}}@else{{$user->carddetail->owner}}@endif" rows="1"></input>
+                    <input type="text" class="form-control transparent" name="owner" id="owner" value="@if($user->carddetail == null){{'Ingrese su nombre como figura en la tarjeta'}}@else{{$user->carddetail->owner}}@endif" rows="1"></input>
                 </div>
                 <div class="field col-sm-12 col-m-5 col-lg-5 border-top pt-2">
                   <p>Numero de tarjeta</p>
                 </div>
                 <div class="form-group value col-sm-12 col-m-7 col-lg-7 pt-2">
-                    <input type="text" class="form-control transparent" name="card_number" id="card_number" value="@if($user->carddetail->number == null){{'Ingrese su numero de tarjeta'}}@else{{$user->carddetail->number}}@endif" rows="1"></input>
+                    <input type="text" class="form-control transparent" name="card_number" id="card_number" value="@if($user->carddetail == null){{'Ingrese su numero de tarjeta'}}@else{{$user->carddetail->number}}@endif" rows="1"></input>
                 </div>
               </div>
               <button type="submit" name="updateDetails" class="btn btn-primary mb-4">Actualizar datos</button>

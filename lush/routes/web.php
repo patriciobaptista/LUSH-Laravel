@@ -22,11 +22,13 @@ Route::view('/', 'index');
 
 Route::view('/nosotros', 'about');
 
-Route::resource('/destinos', 'ProductsController');
+Route::get('/destinos', 'ProductsController@index');
+
+Route::get('destinos/{id}', 'ProductsController@show');
+
+Route::post('/destinos{id}', 'CartController@store');
 
 Route::get('/carrito', 'CartController@index');
-
-Route::get('/carrito/{id}', 'CartController@show');
 
 Route::post('/carrito', 'CartController@destroy');
 
@@ -36,6 +38,3 @@ Route::view('/contacto', 'contact');
 
 Route::get('/perfil', 'UserController@userprofile');
 Route::post('/perfil', 'UserController@updateAvatar');
-
-
-Route::view('/carrito', 'cart');

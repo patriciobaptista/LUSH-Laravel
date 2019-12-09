@@ -43,13 +43,13 @@
 
             <div class="detalle mt-3">
                 <img src="{{asset('storage/DestinationPhoto/' . $product["photos"][0]["name"])}}" alt="{{$product["destination"]}}">
-                <form class="" action="{{action('CartController@destroy')}}" method="post">
+                <form class="" action="/carrito" method="post">
                   @csrf
                   <ul>
                     <li class="product-name mb-2">{{$product["destination"]}}</li>
                     <li class="description">Precio:$ {{$product["price"]}}</li>
                     <li class="description">Cantidad: {{$product["quantity"]}}</li>
-                    <button class="btn btn-primary" name="id" value="{{$loop->index}}" type="submit">Eliminar la mierda</button>
+                    <button class="btn btn-primary" name="id" value="{{$product["id"]}}" type="submit">Eliminar la mierda</button>
                   </ul>
 
                     </form>

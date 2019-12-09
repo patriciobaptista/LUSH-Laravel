@@ -25,7 +25,7 @@
             </div>
           </div>
           <div class="description col-12 col-md-12 col-lg-6">
-            <form class="" action="{{route('destinos.store')}}" method="post">
+            <form class="" action="/destinos{id}" method="post">
               @csrf
               @method('POST')
             <div class="row">
