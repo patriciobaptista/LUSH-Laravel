@@ -41,7 +41,8 @@
 
          <div class="offset col-4 col-md-3 col-lg-4 pr-4 text-right" style="display:inline-block">
           <ul class="pl-0 mt-3 mb-0 pb-0">
-            <li style="" ><a href="/login">Log in</a><a class="dropdown-item" href="/carrito"><i class="fas fa-shopping-cart"></i></a></li>
+            <li style="" ><a href="/login">Log in</a></li>
+            <li><a class="" href="/carrito"><i class="fas fa-shopping-cart"></i></a></li>
           </ul>
            @else
           <div id="dropdown-big" class="dropdown col-lg-4 text-right">
@@ -96,7 +97,7 @@
        x.classList.toggle("change");
      }
      </script>
-    <main>
+    <main id="main">
       @yield('main')
 </main>
 

@@ -38,7 +38,6 @@ return view('ABM.edit', [
 
 
 public function edit(Request $request){
-    dd($request->file("photo".$request->editphoto));
 
 
   if($request->file('photos')){
@@ -65,7 +64,7 @@ public function edit(Request $request){
           $newphoto->product_id = $request->id;
           $newphoto->save();
         }
-        return redirect('ABM.main');
+        return redirect('/ABM/main');
   }
 
 

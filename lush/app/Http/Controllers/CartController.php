@@ -10,6 +10,7 @@ class CartController extends Controller
 
     public function index()
     {
+      $request->session()->flush('cart');
         return view('/cart');
     }
 
@@ -41,17 +42,17 @@ class CartController extends Controller
 
 
 
-          elseif(isset($cart->$id)){
-            $cart->quantity++;
+          elseif($request->session()->has("cart.$id")){
+            $request->session("cart.$id")["quantity"]++;
 
-            $request->session()->put('cart', $cart);
+            $request->session()->save();
 
-            return back();
+            return redirect()->back();
     }
 
         else{
 
-            $request->session()->push('cart', [
+            $request->session()->push("cart.$id", [
               'id' => $id,
             'destination' => $product->destination,
             'quantity' => 1,
@@ -68,13 +69,8 @@ class CartController extends Controller
 
     public function destroy(Request $request)
     {
-      $position = $request->id;
-      $productos = session('cart');
-
-      if($productos['id'] = $position){
-        $request->session()->forget($productos['id']);
-      }
-
+      $id = $request->id;
+        $request->session()->forget("cart.$id");
 
         return redirect()->back();
     //  if($request->session()->has('cart')){

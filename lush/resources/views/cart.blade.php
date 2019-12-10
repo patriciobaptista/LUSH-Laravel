@@ -20,7 +20,9 @@
           <div class="products col-12 col-m-6 col-lg-6">
             <h2>productos</h2>
 
-
+            @php
+              dd(session('cart'));
+            @endphp
 
               @if(session()->has('cart'))
 
@@ -35,7 +37,7 @@
 
             @php
 
-            $total =+ ($product["price"] * $product["quantity"]);
+            $total += ($product["price"] * $product["quantity"]);
 
             @endphp
 
@@ -49,7 +51,7 @@
                     <li class="product-name mb-2">{{$product["destination"]}}</li>
                     <li class="description">Precio:$ {{$product["price"]}}</li>
                     <li class="description">Cantidad: {{$product["quantity"]}}</li>
-                    <button class="btn btn-primary" name="id" value="{{$product["id"]}}" type="submit">Eliminar la mierda</button>
+                    <button class="btn btn-primary" name="id" value="{{$product["id"]}}" type="submit">Borrar producto</button>
                   </ul>
 
                     </form>

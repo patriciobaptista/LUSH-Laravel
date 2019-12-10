@@ -8,7 +8,7 @@
 
 
   <div class="container-fluid prodcont row pt-5">
-          <div class="photos col-12 col-md-12 col-lg-6">
+          <div class="photos col-12 col-md-12 col-lg-6 pt-2">
             <div class="photo-big mb-3 p-3">
               <img src="{{asset('storage/DestinationPhoto/' . $product->photos->first()->name) }}" alt="{{$product->photos->first->name}}">
             </div>
@@ -28,7 +28,7 @@
             <form class="" action="/destinos{id}" method="post">
               @csrf
               @method('POST')
-            <div class="row">
+            <div class="row pt-4">
               <div class="col-12 text-center">
                 <h1>{{$product->destination}} </h1>
                 <div class="feature_divider">
