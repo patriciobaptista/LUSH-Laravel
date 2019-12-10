@@ -43,7 +43,7 @@
          </td>
 
         <td>
-          <a class="btn btn-primary" href="delete/{{$producto->id}}""><i class="far fa-trash-alt"></i></a>
+          <a class="btn btn-primary" href="delete/{{$producto->id}}"><i class="far fa-trash-alt"></i></a>
         </td>
 
 

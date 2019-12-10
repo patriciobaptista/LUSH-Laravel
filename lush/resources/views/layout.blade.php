@@ -96,7 +96,7 @@
        x.classList.toggle("change");
      }
      </script>
-    <main>
+    <main id="main">
       @yield('main')
 </main>
 

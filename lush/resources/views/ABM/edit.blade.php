@@ -40,30 +40,30 @@
   <label for="Stock">Lugares vacantes</label>
   <input type="text" class="form-control" name="stock" id="Stock" value="{{$product->stock}}" rows="1"></input>
   </div>
-
+  @php
+    $photocounter = 1;
+  @endphp
   @if(count($photos) != 0)
-    @php
-      $photocounter = 0;
-    @endphp
+
   @foreach($photos as $photo)
     @php
       $photocounter++;
     @endphp
 
 
+
   <div class="row my-3 flex-column flex-lg-row flex-wrap">
     <div class="col-6 col-lg-3 row">
         <img class="formphoto col" src="{{asset('storage/DestinationPhoto/' . $photo->name)}}" alt="{{$photo->name}}">
     </div>
-    <div class="form-group pt-lg-4 col-2 col-lg-2">
-        <input type="hidden" class="form-control" name="editphoto" value="{{$photo->id}}"></input>
-    </div>
+    
     <div class="col-6 col-lg-3 pt-lg-5 pl-5">
-      <button class="col-4 btn btn-primary" type="submit" name="borrarphotos">Borrar</button>
+      <a href="/ABM/edit/{{$photo->id}}/borrar" class="col-4 btn btn-primary">Borrar</a>
     </div>
   </div>
 
 @endforeach
+
 
 
 
@@ -77,7 +77,7 @@
 
 
   <button type="submit" name="submit" class="btn btn-primary col-3">Submit</button>
-  <button type="submit" name="volver" class="btn btn-secondary col-3">Volver</button>
+  <a href="/ABM/main" class="btn btn-secondary col-3">Volver</a>
   </form>
 
 

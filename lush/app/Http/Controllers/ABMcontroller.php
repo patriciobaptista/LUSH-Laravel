@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\support\Facades\Storage;
 use App\Product;
 use App\Imageproduct;
 use App\Highlight;
@@ -38,8 +39,6 @@ return view('ABM.edit', [
 
 
 public function edit(Request $request){
-    dd($request->file("photo".$request->editphoto));
-
 
   if($request->file('photos')){
     $this->validate($request, [
@@ -65,16 +64,52 @@ public function edit(Request $request){
           $newphoto->product_id = $request->id;
           $newphoto->save();
         }
-        return redirect('ABM.main');
+        return redirect('/ABM/main');
   }
 
+  elseif($request->has('sendphoto')){
+
+
+      $request->validate([
+      'photo' => 'required',
+      'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+    ]);
+
+    $name = $request->oldname;
+    $request->photo->move(public_path().'/storage/DestinationPhoto', $name);
+
+
+    $updatephoto = Imageproduct::find($request->editphoto);
+
+    $updatephoto->name = $name;
+
+    $updatephoto->save();
+
+    return redirect('/ABM/main');
+
+
+  }
 
   else{
     return redirect()->back();
   }
 }
 
+Public function borrarFoto($id){
 
+
+  $foto = Imageproduct::find($id);
+
+  $file= $foto->name;
+  $filename = public_path().'/storage/DestinationPhoto'. $file;
+  Storage::delete($filename);
+
+    Imageproduct::destroy($id);
+
+
+  return redirect()->back();
+
+}
 
 
 

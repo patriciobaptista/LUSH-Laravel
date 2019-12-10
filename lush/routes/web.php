@@ -44,5 +44,7 @@ Route::get('ABM/edit/{id}', 'ABMcontroller@ABMdirect');
 
 Route::post('/ABM/edit', 'ABMcontroller@edit');
 
+Route::get('ABM/edit/{id}/borrar', 'ABMcontroller@borrarFoto');
+
 
 Route::view('/carrito', 'cart');

@@ -20,7 +20,9 @@
           <div class="products col-12 col-m-6 col-lg-6">
             <h2>productos</h2>
 
-
+            @php
+              dd(session('cart'));
+            @endphp
 
               @if(session()->has('cart'))
 
