@@ -10,6 +10,7 @@ class CartController extends Controller
 
     public function index()
     {
+      $request->session()->flush('cart');
         return view('/cart');
     }
 
@@ -24,34 +25,39 @@ class CartController extends Controller
             abort(404);
           endif;
 
-          $cart = $request->session()->get('cart');
+          $cart = $request->session()->has('cart');
 
           if(!$cart){
-            $request->session()->push('cart', [
-            'id' => $id,
+            $request->session()->put("cart.$id", [
+             'id' => $id,
             'destination' => $product->destination,
             'quantity' => 1,
             'price' => $product->price,
             'stay_length' => $product->stay_length,
             'photos' => $product->photos
-            ]);
+          ]
+            );
 
             return back();
           }
 
 
 
-          elseif(isset($cart->$id)){
-            $cart->quantity++;
+          elseif($request->session()->has("cart.$id")){
 
-            $request->session()->put('cart', $cart);
+            $update = $request->session()->get("cart.$id");
 
-            return back();
+            $update["quantity"]++;
+
+            $request->session()->put("cart.$id", $update);
+
+
+            return redirect()->back();
     }
 
         else{
 
-            $request->session()->push('cart', [
+            $request->session()->put("cart.$id", [
               'id' => $id,
             'destination' => $product->destination,
             'quantity' => 1,
@@ -68,13 +74,8 @@ class CartController extends Controller
 
     public function destroy(Request $request)
     {
-      $position = $request->id;
-      $productos = session('cart');
-
-      if($productos['id'] = $position){
-        $request->session()->forget($productos['id']);
-      }
-
+      $id = $request->id;
+        $request->session()->forget("cart.$id");
 
         return redirect()->back();
     //  if($request->session()->has('cart')){

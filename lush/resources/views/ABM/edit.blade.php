@@ -52,11 +52,12 @@
 
 
 
+
   <div class="row my-3 flex-column flex-lg-row flex-wrap">
     <div class="col-6 col-lg-3 row">
         <img class="formphoto col" src="{{asset('storage/DestinationPhoto/' . $photo->name)}}" alt="{{$photo->name}}">
     </div>
-    
+
     <div class="col-6 col-lg-3 pt-lg-5 pl-5">
       <a href="/ABM/edit/{{$photo->id}}/borrar" class="col-4 btn btn-primary">Borrar</a>
     </div>

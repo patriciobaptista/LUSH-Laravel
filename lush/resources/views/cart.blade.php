@@ -20,13 +20,17 @@
           <div class="products col-12 col-m-6 col-lg-6">
             <h2>productos</h2>
 
-            @php
-              dd(session('cart'));
-            @endphp
+            @if(count(session()->get('cart')) == 0)
+              @php
+                session()->flush();
+              @endphp
+            @endif
 
               @if(session()->has('cart'))
 
+
                 @php
+
                   $total= 0;
                 @endphp
 
@@ -35,26 +39,27 @@
 
             @foreach (session('cart') as $product)
 
+
             @php
 
-            $total =+ ($product["price"] * $product["quantity"]);
-
+            $total += ($product["price"] * $product["quantity"]);
+            $photo1 = $product["photos"]->first()["name"];
             @endphp
 
 
-
             <div class="detalle mt-3">
-                <img src="{{asset('storage/DestinationPhoto/' . $product["photos"][0]["name"])}}" alt="{{$product["destination"]}}">
+                <img src="{{asset('storage/DestinationPhoto/' . $photo1)}}" alt="{{$product["destination"]}}">
                 <form class="" action="/carrito" method="post">
                   @csrf
                   <ul>
                     <li class="product-name mb-2">{{$product["destination"]}}</li>
                     <li class="description">Precio:$ {{$product["price"]}}</li>
                     <li class="description">Cantidad: {{$product["quantity"]}}</li>
-                    <button class="btn btn-primary" name="id" value="{{$product["id"]}}" type="submit">Eliminar la mierda</button>
+                    <button class="btn btn-primary" name="id" value="{{$product["id"]}}" type="submit">Borrar producto</button>
                   </ul>
 
-                    </form>
+                </form>
+
 
             </div>
           @endforeach

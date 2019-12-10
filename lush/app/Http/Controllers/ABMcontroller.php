@@ -40,13 +40,17 @@ return view('ABM.edit', [
 
 public function edit(Request $request){
 
-  if($request->file('photos')){
-    $this->validate($request, [
 
+
+  if($request->file('photos')){
+
+
+    $this->validate($request, [
                   'photos' => 'required',
-                  'photos.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
+                  'photos.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:10000'
 
           ]);
+
       $imagename = Str::slug("$request->destination");
 
         foreach($request->file('photos') as $key => $image)
@@ -54,7 +58,7 @@ public function edit(Request $request){
             $extension = $image->getClientOriginalExtension();
 
               $name = $imagename.($request->counter + $key). "." . $extension;
-              $image->move(public_path('/storage/DestinationPhoto'), $name);
+              $image->move(public_path().'/storage/DestinationPhoto', $name);
               $data[] = $name;
           }
         foreach($data as $one){
@@ -64,35 +68,13 @@ public function edit(Request $request){
           $newphoto->product_id = $request->id;
           $newphoto->save();
         }
-        return redirect('/ABM/main');
+        return redirect()->back();
   }
-
-  elseif($request->has('sendphoto')){
-
-
-      $request->validate([
-      'photo' => 'required',
-      'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
-    ]);
-
-    $name = $request->oldname;
-    $request->photo->move(public_path().'/storage/DestinationPhoto', $name);
+else{
+  return redirect()->back();
+}
 
 
-    $updatephoto = Imageproduct::find($request->editphoto);
-
-    $updatephoto->name = $name;
-
-    $updatephoto->save();
-
-    return redirect('/ABM/main');
-
-
-  }
-
-  else{
-    return redirect()->back();
-  }
 }
 
 Public function borrarFoto($id){
