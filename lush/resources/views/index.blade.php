@@ -2,6 +2,7 @@
 @section('main')
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type = "text/css" href="{{ asset('css/theme.css') }}">
     <link rel="stylesheet" type = "text/css" href="{{ asset('css/index.css') }}">
     <title>LUSH - Luxury Travel</title>
   </head>
@@ -10,9 +11,9 @@
       <video autoplay muted loop id="myVideo">
       <source src="{{asset('/storage/videomp4.mp4')}}" type="video/mp4">
       </video>
-      <img class="home-img" src="img/home-img.jpg" alt="">
     </div>
     <div class="icons row">
+      <button id="switch" onclick="toggleTheme()">Switch</button>
       <div class="col-12 col-md-12 col-lg-4 text-center">
         <img class="imagen" src="{{asset('/storage/servicio.png')}}" alt="foto">
         <h2>servicio</h2>
@@ -44,5 +45,28 @@
         </div>
       </div>
     </div>
+    <script>
+        // function to set a given theme/color-scheme
+        function setTheme(themeName) {
+            localStorage.setItem('theme', themeName);
+            document.documentElement.className = themeName;
+        }
+        // function to toggle between light and dark theme
+        function toggleTheme() {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-light');
+            } else {
+                setTheme('theme-dark');
+            }
+        }
+        // Immediately invoked function to set the theme on initial load
+        (function () {
+            if (localStorage.getItem('theme') === 'theme-dark') {
+                setTheme('theme-dark');
+            } else {
+                setTheme('theme-light');
+            }
+        })();
+    </script>
   </body>
 @endsection
