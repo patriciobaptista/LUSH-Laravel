@@ -43,14 +43,14 @@
          </td>
 
         <td>
-          <a class="btn btn-primary" href="delete/{{$producto->id}}"><i class="far fa-trash-alt"></i></a>
+          <a class="btn btn-primary" href="{{action('ABMcontroller@delete', ["id" => $producto->id])}}"><i class="far fa-trash-alt"></i></a>
         </td>
 
 
         </tr>
       @endforeach
       </table>
-        <a class="plus btn btn-primary" href="add.blade.php"><i class="fas fa-plus fa-2x"></i></a>
+        <a class="plus btn btn-primary" href="/ABM/add"><i class="fas fa-plus fa-2x"></i></a>
     </div>
   </div>
 

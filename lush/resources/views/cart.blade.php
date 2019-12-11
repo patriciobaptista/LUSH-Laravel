@@ -28,7 +28,6 @@
 
               @if(session()->has('cart'))
 
-
                 @php
 
                   $total= 0;

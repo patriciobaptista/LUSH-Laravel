@@ -44,7 +44,14 @@ Route::get('ABM/edit/{id}', 'ABMcontroller@ABMdirect');
 
 Route::post('/ABM/edit', 'ABMcontroller@edit');
 
-Route::get('ABM/edit/{id}/borrar', 'ABMcontroller@borrarFoto');
+Route::get('ABM/edit/{id}/borrarFoto', 'ABMcontroller@borrarFoto');
+Route::get('ABM/edit/{id}/borrarHighlight', 'ABMcontroller@borrarHighlight');
+Route::get('ABM/edit/{id}/borrarInclude', 'ABMcontroller@borrarInclude');
+
+Route::view('ABM/add', '/ABM/add');
+Route::post('ABM/add', 'ABMcontroller@add');
+
+Route::get('ABM/destroy/{id}', 'ABMcontroller@delete');
 
 
 Route::view('/carrito', 'cart');
