@@ -13,7 +13,6 @@
               <div class="row photobackground px-0" style="background-image: url({{asset('/storage/star_wp.jpg')}})">
 
                   <div class="col-12 formcontain d-flex">
-
                     <form class="formAll" action="{{ route('register') }}" method="POST" enctype="multipart/form-data">
                         @csrf
 
@@ -26,6 +25,9 @@
                                       <strong>{{ $message }}</strong>
                                   </span>
                               @enderror
+                        </div>
+                        <div id="divName" class="form-group">
+                            
                         </div>
                         <div class="form-group">
                             <label for="surname">{{ __('Surname') }}</label>

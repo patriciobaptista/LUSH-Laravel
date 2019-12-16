@@ -20,9 +20,9 @@
                   </span>
               @enderror
           </div>
-              <small id="emailHelp" class="form-text text-muted">Lush Luxury Travel no comparte informacion personal con terceros.</small>
+              <small id="emailHelp" class="form-text text-muted">Lush Luxury Travel does not share personal information with third parties.</small>
             <div class="form pt-3">
-              <label for="password">Contrasena</label>
+              <label for="password">Password</label>
               <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="password" placeholder="Ingrese su contrasena" value="" required autocomplete="current-password">
               @error('password')
                   <span class="invalid-feedback" role="alert">
@@ -32,13 +32,13 @@
             </div>
              </br>
              <div class="form-group form-check">
-               <input type="checkbox" class="form-check-input" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-               <label class="form-check-label" for="remember">Recordar usuario</label>
+               <input class="remember"type="checkbox" class="form-check-input" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+               <label class="form-check-label remember" for="remember">Remember me</label>
              </div>
             <br>
-            <button type="submit" name="login" class="btn btn-primary">Ingresar</button>
+            <button type="submit" name="login" class="btn btn-primary">log in</button>
             @if (Route::has('password.request'))
-                <a class="btn btn-link" href="{{ route('password.request') }}">
+                <a class="forgot btn btn-link" href="{{ route('password.request') }}">
                     {{ __('Forgot Your Password?') }}
                 </a>
             @endif

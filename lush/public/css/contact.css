@@ -1,11 +1,12 @@
-in{
-  min-height:650px;
-}
-
 #main h1{
   font-family: 'Raleway', monospace;
   font-size: 25px;
   text-transform: uppercase;
+}
+
+.text p{
+  font-family: 'Raleway', monospace;
+  font-size: 20px;
 }
 
 .feature_divider {
@@ -13,13 +14,11 @@ in{
     display: block;
     width: 100px;
     margin: 10px auto;
-    border-color: black;
 }
 
 .contact-form label{
-  font-family: Montserrat, sans-serif;
-  font-size: 13px;
-  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
   width:100%;
@@ -49,9 +48,14 @@ in{
 
 .our_home{
   padding: 20px;
-  border: solid 1px black;
+  border: solid 3px black;
   position:absolute;
   top: 20px;
   left: 20px;
   background-color: white;
+}
+
+.our_home p{
+  font-family: 'Raleway', monospace;
+  font-size: 17px;
 }

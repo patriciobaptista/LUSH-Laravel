@@ -7,13 +7,13 @@
 @section('main')
 
 
-      <div class="container-fluid contphot pt-5">
+      <div class="container-fluid contphot pt-5" id="background">
 
         <div class="row mb-2">
-          <div class="col-12 text-center mt-5 pt-5">
-            <h1>Nuestros Viajes</h1>
+          <div class="col-12 text-center mt-3 pt-3">
+            <h1>Destinations</h1>
             </div>
-            <div class="feature_divider">
+            <div id="feature"class="feature_divider">
             </div>
           </div>
 
@@ -65,7 +65,7 @@
 
                   <h2 class="photoheader">{{$product->destination}}</h2>
                     <p class="">{{$product->description}}</p>
-                    <a href="destinos/{{$product->id}}"> VER MÁS </a>
+                    <a href="destinos/{{$product->id}}">Read More</a>
 
                 </div>
             </div>

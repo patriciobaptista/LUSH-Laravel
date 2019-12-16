@@ -12,7 +12,7 @@ class CartController extends Controller
     {
       $request->session()->flush('cart');
         return view('/cart');
-    }
+      }
 
         public function store(Request $request)
         {
@@ -74,15 +74,26 @@ class CartController extends Controller
 
     public function destroy(Request $request)
     {
-      $id = $request->id;
+        if($request->has('id')){
+        $id = $request->id;
         $request->session()->forget("cart.$id");
 
         return redirect()->back();
+      }
+
+      elseif ($request->has('confirm_order')) {
+        $cart = session()->get('cart');
+        return view('order', [
+          'cart' => $cart,
+        ]);
+      }
+
     //  if($request->session()->has('cart')){
     //    $request->session()->forget("cart" ."[$position]");
     //  }
 
       }
+
 
 
 

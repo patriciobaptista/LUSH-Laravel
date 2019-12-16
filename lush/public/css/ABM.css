@@ -1,8 +1,5 @@
-body{
-  min-height: : 800px;
-}
 #main{
-    min-height: 555px;
+    min-height: 650px;
 }
 #mainDel{
   min-height: 580px;
@@ -13,8 +10,8 @@ body{
 }
 #main a{
   color: black;
-
 }
+
 .btn-primary{
   background-color:#CFB53B;
   font-family: Nanum Gothic, monospace;

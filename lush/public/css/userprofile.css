@@ -1,10 +1,18 @@
 #main{
-  background-image: url("../img/capadocia-sunset.jpg");
   background-size: cover;
   background-attachment: center center;
   background-attachment: fixed;
   min-height: 700px;
 }
+
+.main{
+  background-image: url("../storage/capadocia-sunset.jpg");
+}
+
+.main.dark{
+  background-image: url("../storage/dark.jpg");
+}
+
 
 #main .page-title{
 text-align: center
@@ -32,7 +40,6 @@ text-align: center
     display: block;
     width: 100px;
     margin: 10px auto;
-    border-color: black;
 }
 
 #profile-pic img{

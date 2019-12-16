@@ -1,69 +1,64 @@
 @extends('layout')
 
 @section('title')
-  <script type="text/javascript" src="{{asset('js/ABMedit.js')}}">
-
-  </script>
+  <link rel="stylesheet" type = "text/css" href="{{ asset('css/editar.css') }}">
   <title>Agregar productos</title>
 @endsection
 
 @section('main')
-  <h1 class="pt-5">Agregar producto</h1>
-  <h3>En esta pagina podes cambias agregar un producto nuevo al base de datos</h3>
-
-  </br>
-  <div class="row">
-    <div class="col-8">
-
-
+  <div class="row container pt-4 pl-5">
+    <div class="col-12 pt-4">
+      <h1 class="pt-5">Add new product</h1>
+    </div>
+  </div>
+  <div class="row container pl-5">
+    <div class="col-12">
   <form method="post" action="/ABM/add" enctype="multipart/form-data">
     @csrf
 
 
     <div class="form-group">
-      <label for="Destino">Destino</label>
+      <label for="Destino">Destination</label>
       <input type="text" class="form-control" name="destination" id="Destino" value="" rows="1"></input>
     </div>
     <div class="form-group">
-      <label for="descripcion">Descripcion</label>
+      <label for="descripcion">Description</label>
       <input type="text" class="form-control" name="description" id="descripcion" value="" rows="4"></input>
     </div>
     <div class="form-group">
-      <label for="Precio">Precio</label>
+      <label for="Precio">Price</label>
       <input type="text" class="form-control" name="price" id="Precio" value="" rows="1"></input>
     </div>
     <div class="form-group">
-      <label for="Duracion">Duracion en dias</label>
+      <label for="Duracion">Stay length</label>
       <input type="text" class="form-control" name="stay" id="Duracion" value="" rows="1"></input>
     </div>
     <div class="form-group">
-      <label for="Stock">Lugares vacantes</label>
+      <label for="Stock">Stock</label>
       <input type="text" class="form-control" name="stock" id="Stock" value="" rows="1"></input>
     </div>
     <div class="form-group">
-      <label for="photos">Fotos del destino</label>
+      <label for="photos">Photos</label>
       <input type="file" multiple="multiple" class="form-control" name="photos[]" id="photos" value=""></input>
     </div>
 
-    <h2>Highlights del viaje</h2>
+    <h2>Package highlights</h2>
     <div id="divHighlights">
   </div>
   <button id="addhighlight" class="btn btn-primary mb-3" type="button" name="addhighlight">Agregar highlight</button>
 
 
-  <h2>Lo que incluye el viaje</h2>
+  <h2>Package includes</h2>
   <div id="divIncludes">
   </div>
   <button id="addInclude" class="btn btn-primary mb-3" type="button" name="button">Agregar include</button>
 
-    <button type="submit" name="submit" class="btn btn-primary col-3">Submit</button>
-    <a href="/ABM/main" class="btn btn-secondary col-3">Volver</a>
   </form>
-
-
-
-
   </div>
-
+  <div class="col-12">
+    <button type="submit" name="submit" class="btn btn-primary col-3">Submit</button>
+    <a href="/ABM/main" class="btn btn-secondary col-3">Back</a>
   </div>
+  </div>
+  <script type="text/javascript" src="{{asset('js/ABMedit.js')}}"></script>
 @endsection

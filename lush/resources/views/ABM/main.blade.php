@@ -6,12 +6,10 @@
 
 @endsection
 @section('main')
-
-
-  <div class="row pt-5">
-    <div class="col-12 pt-5">
+<main id="main" class="container-fluid">
+  <div class="row pt-5 text-center mr-0 pr-0">
+    <div class="col-12 pt-5 text-center pr-0 mr-0">
       <table style="width:100%" border="1">
-
         <tr>
            <th>ID</th>
            <th>Destination</th>
@@ -22,12 +20,8 @@
            <th></th>
            <th></th>
         </tr>
-
         @foreach ($products as $id => $producto)
-
-
           <tr>
-
             <td class="">{{$producto->id}}</td>
             <td class="">{{$producto->destination}}</td>
             <td class="">{{$producto->description}}</td>
@@ -53,7 +47,7 @@
         <a class="plus btn btn-primary" href="/ABM/add"><i class="fas fa-plus fa-2x"></i></a>
     </div>
   </div>
-
+</main>
 
 
 

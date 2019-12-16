@@ -1,5 +1,5 @@
 #main{
-  background-image: url("../img/bora.jpg");
+  background-image: url("../storage/bora.jpg");
   background-size: cover;
   background-attachment: center center;
   background-attachment: fixed;
@@ -21,7 +21,6 @@
     display: block;
     width: 100px;
     margin: 10px auto;
-    border-color: black;
 }
 
 
@@ -60,4 +59,5 @@
   font-size: 15px;
   font-weight: bolder;
   padding-top:12px;
+  color:grey;
 }

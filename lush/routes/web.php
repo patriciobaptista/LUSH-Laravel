@@ -27,31 +27,35 @@ Route::get('destinos/{id}', 'ProductsController@show');
 
 Route::post('/destinos{id}', 'CartController@store');
 
+
 Route::get('/carrito', 'CartController@index');
 
 Route::post('/carrito', 'CartController@destroy');
 
+Route::view('/carrito', 'cart');
+
 Route::view('/faq', 'faq');
 
-Route::view('/contacto', 'contact');
+Route::get('/contacto', 'ContactUsController@index');
+Route::post ('/contacto' , 'ContactUsController@contactUSPost');
 
 Route::get('/perfil', 'UserController@userprofile');
 Route::post('/perfil', 'UserController@updateAvatar');
 
-Route::get('/ABM/main', 'ABMcontroller@index');
+Route::get('/orderconfirmation', 'OrderController@index');
+Route::post('/orderconfirmation', 'OrderController@back');
 
-Route::get('ABM/edit/{id}', 'ABMcontroller@ABMdirect');
+Route::get('/ABM/main', 'ABMcontroller@index')->middleware('admin');
 
-Route::post('/ABM/edit', 'ABMcontroller@edit');
+Route::get('ABM/edit/{id}', 'ABMcontroller@ABMdirect')->middleware('admin');
 
-Route::get('ABM/edit/{id}/borrarFoto', 'ABMcontroller@borrarFoto');
-Route::get('ABM/edit/{id}/borrarHighlight', 'ABMcontroller@borrarHighlight');
-Route::get('ABM/edit/{id}/borrarInclude', 'ABMcontroller@borrarInclude');
+Route::post('/ABM/edit', 'ABMcontroller@edit')->middleware('admin');
 
-Route::view('ABM/add', '/ABM/add');
-Route::post('ABM/add', 'ABMcontroller@add');
+Route::get('ABM/edit/{id}/borrarFoto', 'ABMcontroller@borrarFoto')->middleware('admin');
+Route::get('ABM/edit/{id}/borrarHighlight', 'ABMcontroller@borrarHighlight')->middleware('admin');
+Route::get('ABM/edit/{id}/borrarInclude', 'ABMcontroller@borrarInclude')->middleware('admin');
 
-Route::get('ABM/destroy/{id}', 'ABMcontroller@delete');
+Route::view('ABM/add', '/ABM/add')->middleware('admin');
+Route::post('ABM/add', 'ABMcontroller@add')->middleware('admin');
 
-
-Route::view('/carrito', 'cart');
+Route::get('ABM/destroy/{id}', 'ABMcontroller@delete')->middleware('admin');

@@ -6,19 +6,17 @@
   <script type="text/javascript" src="{{asset('js/ABMedit.js')}}">
 
   </script>
-  <title>Admin - Editar</title>
+  <title>Admin - Edit</title>
 @endsection
 
 @section('main')
-
-  <h1 class="pt-4">Editor de producto</h1>
-  <h3>En esta pagina podes cambias informacion y detalles de productos</h3>
-
-  </br>
-  <div class="row">
+  <div class="row pt-4">
+    <div class="col-12 text-center pt-4">
+      <h1 class="pt-4">Edit product information</h1>
+    </div>
+  </div>
+  <div class="row container">
   <div class="col-12 col-lg-10">
-
-
   <form id="editform" class="container-fluid" method="post" action="/ABM/edit" enctype="multipart/form-data">
     @csrf
 
@@ -60,7 +58,7 @@
     <input type="text" class="form-control" name="highlights[{{$value->id}}]" id="highlight" value="{{$value->includes}}" rows="1"></input>
     </div>
     <div class="col-2">
-      <a href="{{action('ABMcontroller@borrarHighlight', ["id" => $value->id])}}" class="btn btn-primary mt-lg-4">Borrar</a>
+    <a class="btn btn-primary mt-lg-4" href="{{action('ABMcontroller@borrarHighlight', ["id" => $value->id])}}">Borrar</a></button>
     </div>
   </div>
   @endforeach
@@ -106,7 +104,7 @@
     </div>
 
     <div class="col-6 col-lg-3 pt-lg-5 pl-5">
-      <a href="{{action('ABMcontroller@borrarFoto', ["id" => $photo->id])}}" class="col-4 btn btn-primary">Borrar</a>
+      <a href="{{action('ABMcontroller@borrarFoto', ["id" => $photo->id])}}" class=" btn btn-primary">Borrar</a>
     </div>
   </div>
 

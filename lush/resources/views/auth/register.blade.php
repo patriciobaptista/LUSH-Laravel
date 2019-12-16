@@ -19,7 +19,7 @@
                       @csrf
 
 
-                      <div class="form-group">
+                      <div class="form-group" id="divName">
                           <label for="name">{{ __('Name') }}</label>
                           <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"id="name" aria-describedby="nameHelp" required autocomplete="name" value="{{ old('name') }}" autofocus>
                             @error('name')
@@ -28,16 +28,16 @@
                                 </span>
                             @enderror
                       </div>
-                      <div class="form-group">
+                      <div class="form-group" id="divSurname">
                           <label for="surname">{{ __('Surname') }}</label>
-                          <input type="text" class="form-control @error('surname') is-invalid @enderror" name="surname" name="surname" id="apellido" aria-describedby="apellidoHelp" placeholder="Escribir Apellido" value="{{ old('surname') }}"required autocomplete="surname" autofocus>
+                          <input type="text" class="form-control @error('surname') is-invalid @enderror" name="surname" name="surname" id="apellido" aria-describedby="apellidoHelp" value="{{ old('surname') }}"required autocomplete="surname" autofocus>
                           @error('surname')
                               <span class="invalid-feedback" role="alert">
                                   <strong>{{ $message }}</strong>
                               </span>
                           @enderror
                       </div>
-                      <div class="form-group">
+                      <div class="form-group" id="divEmail">
                           <label for="email">{{ __('E-Mail Address') }}</label>
                           <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" aria-describedby="emailHelp" required autocomplete="email" value="{{ old('email') }}">
                           @error('email')
@@ -46,7 +46,8 @@
                               </span>
                           @enderror
                       </div>
-                      <div class="form-group">
+
+                      <div class="form-group" id="divPass">
                           <label for="password">{{ __('Password') }}</label>
                           <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="password" required autocomplete="new-password" value="">
                           @error('password')
@@ -58,6 +59,14 @@
                       <div class="form-group">
                           <label for="password-confirm">{{ __('Confirm Password') }}</label>
                           <input type="password" name="password_confirmation" class="form-control" id="password-confirm" required autocomplete="new-password"value="">
+                      </div>
+                      <div class="form-group">
+                        <select name="country">
+                          <option value="-1">Seleccionar país</option>
+                        </select>
+                      </div>
+                      <div id="provinces" class= "form-group">
+
                       </div>
                       <div class="form-group">
                           <label style="display:none" for="avatar">Subir foto de perfil: </label>
@@ -76,6 +85,9 @@
             </div>
         </article>
     </section>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="{{ asset('js/register.js') }}"></script>
   </body>
 
 @endsection

@@ -12,13 +12,24 @@
             <div class="photo-big mb-3 p-3">
               <img src="{{asset('storage/DestinationPhoto/' . $product->photos->first()["name"]) }}" alt="{{$product->photos->first()->name}}">
             </div>
-            <div class="photo-small mb-3 col-12">
+            <div class="photo-small mb-3 pt-4 col-12">
               <div class="row mb-3">
                  @foreach ($product->photos as $photo)
 
 
                   <div class="col-4">
-                    <img src="{{asset('storage/DestinationPhoto/' . $photo->name)}}" alt="{{$photo->name}}">
+                    <img id="myImg" src="{{asset('storage/DestinationPhoto/' . $photo->name)}}" alt="{{$product->destination}} ">
+                    <div id="myModal" class="modal">
+
+  <!-- The Close Button -->
+  <span class="close">&times;</span>
+
+  <!-- Modal Content (The Image) -->
+  <img class="modal-content" id="img01">
+
+  <!-- Modal Caption (Image Text) -->
+  <div id="caption"></div>
+</div>
                   </div>
                 @endforeach
               </div>
@@ -31,7 +42,7 @@
             <div class="row pt-4">
               <div class="col-12 text-center">
                 <h1>{{$product->destination}} </h1>
-                <div class="feature_divider">
+                <div id="feature" class="feature_divider">
                 </div>
               </div>
               <div class="col-12 p-3">
@@ -82,5 +93,5 @@
           </div>
         </form>
       </div>
-
+      <script src="{{ asset('js/product.js') }}"></script>
 @endsection

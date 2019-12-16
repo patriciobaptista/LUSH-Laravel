@@ -11,36 +11,40 @@
   <section class="container">
     <div class="row pt-5">
       <div class="col-12 text-center title pt-5">
-        <h1>Preguntas Frecuentes</h1>
-        <div class="feature_divider mt-3">
+        <h1 id="h1">frequently asked questions</h1>
+        <div id="feature"class="feature_divider mt-3">
         </div>
       </div>
     </div>
-    <button type="button" class="collapsible mt-3 mb-2"><h2>¿Cuales son las formas de Pago?</h2></button>
+    <button type="button" class="collapsible mt-3 mb-2"><h2>Why should I use LUSH Luxury Travel?</h2></button>
     <div class="content">
-      <p>Las compras podrán abonarse con tarjeta de crédito, depósito bancario o transferencia electrónica a través de la web o bien en cualquiera de nuestras sucursales. Luego de elegir el paquete correspondiente, se te informarán las opciones para que realices el pago con tu tarjeta de crédito de forma fácil y segura. En caso de realizar la compra a través de Ventas Telefónicas o en una de Nuestras Sucursales, la misma podrá ser realizada en efectivo o con cualquiera de los medios de pagos mencionados anteriormente.</p>
+      <p>When you work with us, you are gaining access to over 40 years of luxury travel experience, important travel connections from around the world, access to exclusive tours, hotels, resorts and properties plus, undeniably, the top customer service a traveler could want.
+
+Our professional Luxury Travel Advisors listen to what your idea of an ideal trip is and then by finding out more about you and your likes, our luxury travel advisers can customize a detailed, personalized itinerary for you. Travel should be more then hopping on a plane and going to a hotel or resort. Let our luxury travel advisers plan a special trip, designed around you and your travel dreams.</p>
     </div>
-    <button type="button" class="collapsible mb-2"><h2>¿Como puedo cancelar mi reserva?</h2></button>
+    <button type="button" class="collapsible mb-2"><h2>What is the difference between a Travel Agent and a Travel Advisor?</h2></button>
     <div class="content">
-      <p>La cancelación de las reservas realizadas podrán hacerse por medio fehaciente. Dicha cancelación queda sujeta a lo establecido en el ítem cancelaciones, dentro de las Condiciones Generales de Contratación..</p>
+      <p>A travel agent recommends hotels and resorts, book flights and makes reservations.
+
+A Travel Advisor, is a professional Travel Expert. Very importantly, they have traveled and visited many of the properties that they recommend. They find out about you; your likes, dislikes, wants, needs and most importantly, your travel dreams. Travel Advisors plan experiences arranging all the details from the time you depart for the airport to the time you arrive back home. A professional Travel Advisor has the contacts and connections around the world to make your trip seamless and perfect. They design tailored programs and one of a kind experiences for their clients. Imagine a private tour at your favorite art gallery, or an after-hours visit to a special landmark. Private Jets and Yachts, Top End Hotels and Resorts, Private Tours, Exclusive Outings… the list goes on, the only thing that limits it is your imagination.
+
+Put our expert Luxury Travel Advisors to the test and wait to be amazed!</p>
     </div>
-    <button type="button" class="collapsible mb-2"><h2>¿Que documentacion debo llevar para viajar al exterior?</h2></button>
+    <button type="button" class="collapsible mb-2"><h2>How do I pay for my reservations and hotel stay?</h2></button>
     <div class="content">
-      <p>En la web oficial de MIGRACIONES puede conocer cuales son los documentos válidos para viajes en el exterior.</p>
+      <p>You will make your payments through LUSH Luxury Travel to each vendor, hotel, resort and or airline. Most major credit cards are accepted (American Express, Visa and MasterCard) and in some cases, payment is made at the end of your stay for certain hotel stays or car rentals. In most cases, a deposit may be needed to secure your reservation. This will be discussed during your chat with a Travel Advisor.</p>
     </div>
-    <button type="button" class="collapsible mb-2"><h2>¿En que momento recibo mi voucher?</h2></button>
+    <button type="button" class="collapsible mb-2"><h2>Are there any other costs or fees?</h2></button>
     <div class="content">
-      <p>Los voucher estan disponibles aproximadamente una semana antes de la fecha de Salida del viaje. Pueden ser retirados personalmente en nuestras oficinas o solicitar el envio del mismo
-        por mail.</p>
+      <p>For simple reservations there is no fee. For more extensive journeys, we plan it all with YOU in mind. Every trip is unique, tailored to YOU. No two trips are ever exactly the same! This type of service requires hours of research, planning and preparation. Therefore, we charge a planning fee, contact us for more details.</p>
     </div>
-    <button type="button" class="collapsible mb-2"><h2>¿Los menores de edad abonan la misma tarifa?</h2></button>
+    <button type="button" class="collapsible mb-2"><h2>CAN I BOOK LARGE GROUPS?</h2></button>
     <div class="content">
-      <p>Los menores de 2 años no abonan y no tienen servicio. Con 2 años cumplidos abonan la totalidad del tour. Se toma como referencia ela fecha de salida del viaje.</p>
+      <p>Definitely. We can tailor vacations for families and large groups with excellent rates and a first-class group management system that will take the stress out of planning. Just email us.</p>
     </div>
-    <button type="button" class="collapsible mb-2"><h2>¿Se puede elegir la ubicacion del avion/bus?</h2></button>
+    <button type="button" class="collapsible mb-2"><h2>HOW DO I UPDATE MY ACCOUNT INFORMATION?</h2></button>
     <div class="content">
-      <p>No otorgamos numeros de butacas y ubicacion predestinada. El asiento lo otorga el coordinador en el momento de subir al bus. De todas maneras tratamos de tener en cuenta los requerimientos<br>
-        de nuestros pasajeros en el armado de la taquilla.</p>
+      <p>Kindly send us an email at admin@lushluxurytravel.com and we'll update your records. Reminder: never send sensitive information such as credit card numbers or passwords via e-mail. Give us a call.</p>
     </div>
     <button type="button" class="collapsible mb-3"><h2>¿Las comidas en el viaje estan incluidas?</h2></button>
     <div class="content mb-3">

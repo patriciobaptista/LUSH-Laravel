@@ -7,6 +7,11 @@ html{
 section {
   box-sizing: border-box;
 }
+select,label{
+  font-family: 'Raleway', monospace;
+  width:100%;
+}
+
 
 .photobackground{
   background-image: url("../img/star_wp.jpg");
@@ -53,4 +58,11 @@ section {
 .error{
   color: red;
   font-weight: 600;
+}
+
+.errorJava{
+  color:red;
+  font-size: 14px;
+  font-weight: 600;
+  font-style: 'Nanum Gothic', monospace;
 }
