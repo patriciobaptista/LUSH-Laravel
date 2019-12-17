@@ -112,5 +112,6 @@ border-radius: 8px;
   }
 
   body.dark .vacio {
-    background-color: none !important;
+    background-image: url("../storage/dark.jpg")!important;
+    background-size: cover;
   }

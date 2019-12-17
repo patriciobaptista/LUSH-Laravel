@@ -1,5 +1,4 @@
 #main{
-  background-image: url("../storage/bora.jpg");
   background-size: cover;
   background-attachment: center center;
   background-attachment: fixed;
@@ -7,6 +6,9 @@
   width:100%
 }
 
+#main.dark .bora {
+  background-image: none !important;
+}
 
 #main .title h1{
   font-family: 'Raleway', monospace;

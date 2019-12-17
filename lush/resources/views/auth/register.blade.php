@@ -75,9 +75,9 @@
                       </div>
                       <div class="form-group form-check">
                           <input type="checkbox" class="form-check-input" id="checkfinal" name="checkfinal" value="">
-                          <label class="form-check-label"  for="checkfinal" required>He leído los términos y condiciones</label>
+                          <label class="form-check-label"  for="checkfinal" required>I agree to the terms and condition</label>
                       </div>
-                          <small id="idHelp" class="form-text text-muted">Lush Luxury Travel no comparte informacion personal con terceros. </br></small>
+                          <small id="emailHelp" class="form-text text-muted">Lush Luxury Travel no comparte informacion personal con terceros. </br></small>
                           </br>
                           <button id="submitbottom" type="submit" name="submit" class="btn btn-primary">{{ __('Register') }}</button>
                      </form>
