@@ -7,7 +7,7 @@
   </head>
   <body class="body">
 
-  <main id="main" class="container-fluid" style="background-image: url({{asset('/storage/bora.jpg')}})">
+  <main id="main" class="container-fluid bora" style="background-image: url({{asset('/storage/bora.jpg')}})">
   <section class="container">
     <div class="row pt-5">
       <div class="col-12 text-center title pt-5">

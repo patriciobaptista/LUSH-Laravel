@@ -1,11 +1,14 @@
 
 .foto{
-  background-image: url("../img/plane2.jpg");
   padding: 0px;
   min-height: 630px;
   width:100%;
   background-size: cover;
   margin: 0 auto;
+}
+
+body.dark .foto{
+  background-image: none !important;
 }
 
 .form label{

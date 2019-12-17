@@ -32,8 +32,6 @@ Route::get('/carrito', 'CartController@index');
 
 Route::post('/carrito', 'CartController@destroy');
 
-Route::view('/carrito', 'cart');
-
 Route::view('/faq', 'faq');
 
 Route::get('/contacto', 'ContactUsController@index');

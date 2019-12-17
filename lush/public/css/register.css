@@ -13,12 +13,16 @@ select,label{
 }
 
 
+
 .photobackground{
-  background-image: url("../img/star_wp.jpg");
   width: 100%;
   min-height: 750px;
   margin: 0 auto;
   background-size: cover;
+}
+
+body.dark .photobackground {
+  background-image: none !important;
 }
 
 
@@ -33,6 +37,11 @@ select,label{
   padding-top: 20px;
   margin-bottom: 20px;
 }
+
+body.dark .formcontain .formAll{
+    background-image:url("../storage/dark.jpg")!important;;
+}
+
 .formcontain .formAll .form-group{
   width: 80%;
 

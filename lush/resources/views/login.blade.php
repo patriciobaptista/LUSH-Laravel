@@ -20,7 +20,7 @@
                   </span>
               @enderror
           </div>
-              <small id="emailHelp" class="form-text text-muted">Lush Luxury Travel no comparte informacion personal con terceros.</small>
+              <small id="emailHel" class="form-text text-muted">Lush Luxury Travel no comparte informacion personal con terceros.</small>
             <div class="form pt-3">
               <label for="password">Contrasena</label>
               <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="password" placeholder="Ingrese su contrasena" value="" required autocomplete="current-password">

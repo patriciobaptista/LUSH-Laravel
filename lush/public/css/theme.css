@@ -1,6 +1,11 @@
 .dark{
-  color: white;
+  color: #D3D3D3;
   background-image:url("../storage/dark.jpg");
+}
+
+.light{
+  color: black;
+  background-image:url("../storage/light.jpg");
 }
 
 body {
