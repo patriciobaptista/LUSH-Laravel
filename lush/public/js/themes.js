@@ -6,12 +6,14 @@ var smallfeature = document.querySelector('feature_divider_small');
 var feature = document.getElementById('feature');
 var main = document.getElementById('main');
 var header = document.getElementById('header');
-var labels = document.getElementById('labelContact');
+var labels = document.getElementById('labelContact')
+var userprofile = document.querySelector('userprofile');;
 button.onclick = function changeTheme(){
   body.classList.toggle('dark');
   main.classList.toggle('dark');
   h1.classList.toggle('dark');
   labels.classList.toggle('dark');
+  userprofile.classList.toggle('light');
   if(feature.borderColor.black){
   feature.setAttribute('style', "border-color: white");
   }else{

@@ -5,10 +5,7 @@
   <title>Shopping Cart</title>
 @endsection
 @section('main')
-
-
-
-    <main id="main" class="container-fluid" style="background-image: url({{asset('/storage/carrito.jpg')}})">
+    <main id="main" class="container-fluid foto" style="background-image: url({{asset('/storage/carrito.jpg')}})">
       <div class="row">
         <div class="col-12 text-center mt-5 pt-5">
           <h1>Shopping Cart</h1>
@@ -16,13 +13,9 @@
           <div id="feature"class="feature_divider">
           </div>
         </div>
-        @if(count(session()->get('cart')) == 0)
-          @php
-            session()->flush();
-          @endphp
-        @endif
 
-          @if(session()->has('cart'))
+
+          @if(session()->has('cart') &&  count(session()->get('cart')) !==0)
 
             @php
 
@@ -41,7 +34,7 @@
             $total += ($product["price"] * $product["quantity"]);
             $photo1 = $product["photos"]->first()["name"];
             @endphp
-          <div class="detalle mt-3">
+          <div class="detalle mb-3">
                 <img src="{{asset('storage/DestinationPhoto/' . $photo1)}}" alt="{{$product["destination"]}}">
                 <form class="" action="/carrito" method="post">
                   @csrf

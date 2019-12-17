@@ -21,7 +21,7 @@
 
                       <div class="form-group" id="divName">
                           <label for="name">{{ __('Name') }}</label>
-                          <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"id="name" aria-describedby="nameHelp" required autocomplete="name" value="{{ old('name') }}" autofocus>
+                          <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"id="name" aria-describedby="nameHelp" autocomplete="name" value="{{ old('name') }}" autofocus>
                             @error('name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -30,7 +30,7 @@
                       </div>
                       <div class="form-group" id="divSurname">
                           <label for="surname">{{ __('Surname') }}</label>
-                          <input type="text" class="form-control @error('surname') is-invalid @enderror" name="surname" name="surname" id="apellido" aria-describedby="apellidoHelp" value="{{ old('surname') }}"required autocomplete="surname" autofocus>
+                          <input type="text" class="form-control @error('surname') is-invalid @enderror" name="surname" name="surname" id="apellido" aria-describedby="apellidoHelp" value="{{ old('surname') }}" autocomplete="surname" autofocus>
                           @error('surname')
                               <span class="invalid-feedback" role="alert">
                                   <strong>{{ $message }}</strong>
@@ -39,7 +39,7 @@
                       </div>
                       <div class="form-group" id="divEmail">
                           <label for="email">{{ __('E-Mail Address') }}</label>
-                          <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" aria-describedby="emailHelp" required autocomplete="email" value="{{ old('email') }}">
+                          <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" id="email" aria-describedby="emailHelp"  autocomplete="email" value="{{ old('email') }}">
                           @error('email')
                               <span class="invalid-feedback" role="alert">
                                   <strong>{{ $message }}</strong>
@@ -49,7 +49,7 @@
 
                       <div class="form-group" id="divPass">
                           <label for="password">{{ __('Password') }}</label>
-                          <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="password" required autocomplete="new-password" value="">
+                          <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" id="password" autocomplete="new-password" value="">
                           @error('password')
                               <span class="invalid-feedback" role="alert">
                                   <strong>{{ $message }}</strong>
@@ -58,7 +58,7 @@
                       </div>
                       <div class="form-group">
                           <label for="password-confirm">{{ __('Confirm Password') }}</label>
-                          <input type="password" name="password_confirmation" class="form-control" id="password-confirm" required autocomplete="new-password"value="">
+                          <input type="password" name="password_confirmation" class="form-control" id="password-confirm"  autocomplete="new-password"value="">
                       </div>
                       <div class="form-group">
                         <select name="country">

@@ -9,10 +9,9 @@
   background-image: url("../storage/capadocia-sunset.jpg");
 }
 
-.main.dark{
-  background-image: url("../storage/dark.jpg");
+main.dark .main {
+  background-image: none !important;
 }
-
 
 #main .page-title{
 text-align: center

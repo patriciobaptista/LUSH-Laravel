@@ -4,15 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use Auth;
 
 class CartController extends Controller
 {
 
-    public function index()
-    {
-      $request->session()->flush('cart');
-        return view('/cart');
-      }
+    public function index() {
+      return view('/cart');
+    }
 
         public function store(Request $request)
         {
@@ -26,6 +25,7 @@ class CartController extends Controller
           endif;
 
           $cart = $request->session()->has('cart');
+
 
           if(!$cart){
             $request->session()->put("cart.$id", [
@@ -69,11 +69,14 @@ class CartController extends Controller
 
           return back();
         }
-        }
+      }
+
+
 
 
     public function destroy(Request $request)
     {
+
         if($request->has('id')){
         $id = $request->id;
         $request->session()->forget("cart.$id");
@@ -82,10 +85,13 @@ class CartController extends Controller
       }
 
       elseif ($request->has('confirm_order')) {
+        if(Auth::check() && Auth::user()){
         $cart = session()->get('cart');
         return view('order', [
           'cart' => $cart,
         ]);
+      }else{
+        return redirect('login');
       }
 
     //  if($request->session()->has('cart')){
@@ -93,8 +99,5 @@ class CartController extends Controller
     //  }
 
       }
-
-
-
-
+}
 }

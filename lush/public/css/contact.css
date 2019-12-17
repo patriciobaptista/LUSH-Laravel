@@ -52,10 +52,12 @@
   position:absolute;
   top: 20px;
   left: 20px;
-  background-color: white;
+  background-image: url("../storage/dark.jpg");
+  color:white;
 }
 
 .our_home p{
   font-family: 'Raleway', monospace;
   font-size: 17px;
+  color:white;
 }

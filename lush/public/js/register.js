@@ -113,18 +113,21 @@ var regexMail = /\S+@\S+\.\S+/;
     }
   }
 
+  function registerFormHasErrors() {
+    return nameInput.value == '' || surnameInput.value == '' || emailInput.value == '' || !regexMail.test(emailInput.value) || passInput.value == '' || passInput.value.length < 8;
+  }
+
     form.onsubmit = function (event) {
-    if(nameInput.value == '' || surnameInput.value == '' || emailInput.value == '' || !regexMail.test(emailInput.value) || passInput.value == '' || passInput.value.length < 8){
+      debugger;
       event.preventDefault();
-      alert('There are errors in your registration form. Please amend and resubmit')
-    } else{
-    Swal.fire({
-      title: 'Welcome to LUSH!',
-      text: 'You have registered successfully',
-      icon: 'success',
-      button: 'Log me in',
-  }).then(function(){
-    window.location = "/";
-  });
-  }
-  }
+      if(registerFormHasErrors()){
+        Swal.fire({
+          title: 'Welcome to LUSH!',
+          text: 'You have registered successfully',
+          icon: 'success',
+          button: 'Log me in',
+        });
+      } else {
+        form.submit();
+      }
+    }

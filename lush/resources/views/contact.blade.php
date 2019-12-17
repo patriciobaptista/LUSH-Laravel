@@ -2,11 +2,12 @@
 @section('main')
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type = "text/css" href="{{ asset('css/theme.css') }}">
     <link rel="stylesheet" type = "text/css" href="{{ asset('css/contact.css') }}">
     <title>Contact us</title>
   </head>
   <body class="body">
-    <main id="main" class="container-fluid">
+    <main id="main" class="container-fluid userprofile">
       <section class="container pt-5">
         <div class="row pt-5">
           <div class="col-md-12 text-center">
@@ -70,7 +71,7 @@
       </section>
       <section class="map container-fluid mt-5">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d821.1588586500919!2d-58.42733617079159!3d-34.588090094708505!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb587b49e0501%3A0x35f8478b0e0400fd!2sTemple%20Palermo!5e0!3m2!1sen!2sar!4v1574908017291!5m2!1sen!2sar" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-        <div class="our_home">
+        <div id="ourHome" class="our_home">
           <h1>our home</h1>
           <p>Our offices are at Temple Palermo</p>
           <p>Costa Rica 4667, Palermo</p>
@@ -80,5 +81,6 @@
         </div>
       </section>
     </main>
+    <script src="{{ asset('js/themes.js') }}"></script>
   </body>
 @endsection
