@@ -1,23 +1,15 @@
 @extends('layout')
-@section('main')
 
-  <head>
+@section('title')
+
     <meta charset="utf-8">
     <link rel="stylesheet" type = "text/css" href="{{ asset('css/order.css') }}">
     <title>Order Confirmation</title>
-  </head>
-  @php
-  $totalPrice = 0;
-  $totalQuantity = 0;
-    if(session()->has('cart')){
-     $cart = (session()->get('cart'));
-     foreach($cart as $product){
-        $totalPrice += $product['price']*$product['quantity'];
-        $totalQuantity += $product['quantity'];;
-      }
 
-   }
-  @endphp
+@endsection
+@section('main')
+
+
     <main id="main" class="container-fluid">
       <section class="container pt-3">
         <div class="row pt-2">

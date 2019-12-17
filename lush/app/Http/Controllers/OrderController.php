@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\Sale;
+use Auth;
 
 class OrderController extends Controller
 {
@@ -11,9 +13,33 @@ class OrderController extends Controller
   {
     $products = Product::all();
     $cart = session()->get('cart');
-    return view('order', [
+
+    $totalPrice = 0;
+    $totalQuantity = 0;
+      if(session()->has('cart')){
+       $cart = (session()->get('cart'));
+       foreach($cart as $product){
+          $totalPrice += $product['price']*$product['quantity'];
+          $totalQuantity += $product['quantity'];
+        }
+     }
+
+    foreach ($cart as $product) {
+      $sale = new Sale;
+      $sale->id = null;
+      $sale->price = $product['price'];
+      $sale->quantity = $product['quantity'];
+      $sale->user_id = Auth::user()->id;
+      $sale->product_id = $product['id'];
+      $sale->save();
+    }
+
+
+    return view('/order', [
       'products' => $products,
       'cart' => $cart,
+      'totalQuantity' => $totalQuantity,
+      'totalPrice' => $totalPrice
     ]);
   }
 

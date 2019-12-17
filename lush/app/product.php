@@ -19,6 +19,9 @@ public function includes(){
 public function highlights(){
   return $this->hasMany('App\Highlight', 'product_id');
 }
+public function soldproduct(){
+  return $this->belongsTo('App\Sale', 'product_id');
+}
 
 
 }

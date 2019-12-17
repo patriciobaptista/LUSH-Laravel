@@ -42,8 +42,8 @@ Route::post ('/contacto' , 'ContactUsController@contactUSPost');
 Route::get('/perfil', 'UserController@userprofile');
 Route::post('/perfil', 'UserController@updateAvatar');
 
-Route::get('/orderconfirmation', 'OrderController@index');
-Route::post('/orderconfirmation', 'OrderController@back');
+Route::get('/order', 'OrderController@index');
+Route::post('/order', 'OrderController@back');
 
 Route::get('/ABM/main', 'ABMcontroller@index')->middleware('admin');
 

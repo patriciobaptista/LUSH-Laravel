@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use App\User;
 
 class CartController extends Controller
 {
@@ -82,10 +83,9 @@ class CartController extends Controller
       }
 
       elseif ($request->has('confirm_order')) {
-        $cart = session()->get('cart');
-        return view('order', [
-          'cart' => $cart,
-        ]);
+
+
+        return redirect()->action('OrderController@index');
       }
 
     //  if($request->session()->has('cart')){
