@@ -118,16 +118,14 @@ var regexMail = /\S+@\S+\.\S+/;
   }
 
     form.onsubmit = function (event) {
-      debugger;
       event.preventDefault();
-      if(registerFormHasErrors()){
+      if(registerFormHasErrors() == true){
         Swal.fire({
-          title: 'Welcome to LUSH!',
-          text: 'You have registered successfully',
-          icon: 'success',
-          button: 'Log me in',
+          title: 'There are errors on your form',
+          text: 'Please update and re-submit',
+          icon: 'error',
         });
-      } else {
+      } else{
         form.submit();
       }
     }

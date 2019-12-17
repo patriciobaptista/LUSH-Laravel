@@ -15,7 +15,7 @@
 
                 <div class="col-12 formcontain d-flex">
 
-                  <form class="formAll" action="{{ route('register') }}" method="POST" enctype="multipart/form-data">
+                  <form class="formAll" id="formall" action="{{ route('register') }}" method="POST" enctype="multipart/form-data">
                       @csrf
 
 
@@ -79,7 +79,7 @@
                       </div>
                           <small id="emailHelp" class="form-text text-muted">Lush Luxury Travel no comparte informacion personal con terceros. </br></small>
                           </br>
-                          <button id="submitbottom" type="submit" name="submit" class="btn btn-primary">{{ __('Register') }}</button>
+                          <button id="submitbottom" type="submit" name="submit1" class="btn btn-primary">{{ __('Register') }}</button>
                      </form>
                 </div>
             </div>
