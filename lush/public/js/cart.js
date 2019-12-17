@@ -1,4 +1,4 @@
-var form = document.forms[0];
+ /* var form = document.forms[0];
 var confirm = document.getElementById('confirm');
 
 form.onsubmit = function (event) {
@@ -21,3 +21,4 @@ Swal.fire({
 });
 }
 }
+*/

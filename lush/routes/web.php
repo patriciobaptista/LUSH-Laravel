@@ -37,6 +37,7 @@ Route::view('/faq', 'faq');
 Route::get('/contacto', 'ContactUsController@index');
 Route::post ('/contacto' , 'ContactUsController@contactUSPost');
 
+
 Route::get('/perfil', 'UserController@userprofile');
 Route::post('/perfil', 'UserController@updateAvatar');
 

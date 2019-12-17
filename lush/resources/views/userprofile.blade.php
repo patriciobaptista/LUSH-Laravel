@@ -1,7 +1,6 @@
 @extends('layout')
 @section('main')
 
-
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type = "text/css" href="{{ asset('css/userprofile.css') }}">
@@ -104,7 +103,7 @@
                     <input type="text" class="form-control transparent" name="card_number" id="card_number" value="@if($user->carddetail == null){{'Enter your 16-digit card number'}}@else{{$user->carddetail->number}}@endif" rows="1"></input>
                 </div>
               </div>
-              <button type="submit" name="updateDetails" class="btn btn-primary mb-4">Actualizar datos</button>
+              <button type="submit" name="updateDetails" class="btn btn-primary mb-4">Save My Details</button>
           </div>
 
 

@@ -62,7 +62,7 @@
                       </div>
                       <div class="form-group">
                         <select name="country">
-                          <option value="-1">Seleccionar país</option>
+                          <option value="-1">Select Country</option>
                         </select>
                       </div>
                       <div id="provinces" class= "form-group">
@@ -77,7 +77,7 @@
                           <input type="checkbox" class="form-check-input" id="checkfinal" name="checkfinal" value="">
                           <label class="form-check-label"  for="checkfinal" required>I agree to the terms and condition</label>
                       </div>
-                          <small id="emailHelp" class="form-text text-muted">Lush Luxury Travel no comparte informacion personal con terceros. </br></small>
+                          <small id="emailHelp" class="form-text text-muted">Lush Luxury Travel does not share personal information with third parties. </br></small>
                           </br>
                           <button id="submitbottom" type="submit" name="submit1" class="btn btn-primary">{{ __('Register') }}</button>
                      </form>

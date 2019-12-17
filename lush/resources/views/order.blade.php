@@ -48,7 +48,7 @@
         </article>
         <div class="row mt-4 mb-2">
           <div class="col-12 text-center">
-              <form class="" action="/orderconfirmation" method="post">
+              <form class="" action="/order" method="post">
                 @csrf
             <button class="btn btn-primary" name="back" value="back" type="submit">Back to Home Page</button>
             </form>

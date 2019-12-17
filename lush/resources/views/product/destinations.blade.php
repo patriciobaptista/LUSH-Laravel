@@ -24,7 +24,6 @@
             @foreach($products as $product)
 
 
-
             <div class="col-12 col-md-5 carouselparent">
         <div id="carouselhead{{$loop->index}}" class="carousel slide w-100" data-interval="0" data-ride="carousel"> <!-- First slideshow -->
 

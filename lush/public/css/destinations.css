@@ -4,13 +4,16 @@ h1, h2, h3 {
 body{
   font-family: 'Nanum Gothic';
   overflow-y: scroll;
+  background-image: url("../storage/light.jpg")!important;
+  background-size: cover;
+  }
 }
 .backgroundphoto{
-  background-image: url("../img/crwp.jpg");
   background-size: cover;
   width: 100%;
   min-height: 686px;
 }
+
 
   #main h1{
     font-family: 'Raleway', monospace;
@@ -65,7 +68,6 @@ padding-top: 330px;
 }
 .dad .embodiment .carouselparent{
   flex-wrap: wrap;
-  background-image: url("../storage/light.jpeg");
   opacity: 1;
   justify-content: space-between;
   margin-bottom: 50px;
@@ -73,8 +75,12 @@ padding-top: 330px;
   box-shadow: 3px 3px 7px grey;
   border-radius: 3%;
   background-size: cover;
+  background-color: #F5F5F0;
 }
 
+body.dark .dad .embodiment .carouselparent{
+  color: black !important;
+}
 .carousel .carousel-inner{
 height: 85vh;
 position: relative;
