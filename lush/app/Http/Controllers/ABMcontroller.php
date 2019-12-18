@@ -178,25 +178,27 @@ public function add(Request $request){
   }
   if($request->has('newhighlight')){
     foreach ($request->get('newhighlight') as $key => $value) {
+      if(!empty($value)){
       $highlight = new Highlight;
       $highlight->id = null;
       $highlight->includes = $value;
       $highlight->product_id = $product->id;
       $highlight->save();
-
+    }
     }
   }
   if($request->has('newinclude')){
     foreach ($request->get('newinclude') as $key => $value) {
+      if(!empty($value)){
       $include = new Tripinclude;
       $include->id = null;
       $include->includes = $value;
       $include->product_id = $product->id;
       $include->save();
-
+    }
     }
   }
-  return redirect()->back();
+  return redirect('/ABM/main');
 }
 
 public function delete($id){

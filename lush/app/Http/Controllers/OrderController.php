@@ -27,10 +27,10 @@ class OrderController extends Controller
     foreach ($cart as $product) {
       $sale = new Sale;
       $sale->id = null;
+      $sale->destination = $product['destination'];
       $sale->price = $product['price'];
       $sale->quantity = $product['quantity'];
       $sale->user_id = Auth::user()->id;
-      $sale->product_id = $product['id'];
       $sale->save();
     }
 

@@ -64,6 +64,7 @@ class UserController extends Controller
 
         return view('userprofile', compact('direccion', 'card', 'user'));
       }
+
         else{
           return view('userprofile', compact('direccion', 'card', 'user'));
         }

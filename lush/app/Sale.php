@@ -14,8 +14,6 @@ class Sale extends Model
 public function user(){
   return $this->hasMany("App\User", 'user_id');
 }
-public function product(){
-return $this->hasMany("App\Product", 'product_id');
-}
+
 
 }

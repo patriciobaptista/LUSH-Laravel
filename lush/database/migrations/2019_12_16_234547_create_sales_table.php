@@ -15,12 +15,11 @@ class CreateSalesTable extends Migration
     {
         Schema::create('sales', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('destination')->nullable();
             $table->string('price')->nullable();
             $table->integer('quantity')->nullable();
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->integer('product_id')->unsigned();
-            $table->foreign('product_id')->references('id')->on('products');
             $table->timestamps();
         });
     }
@@ -35,9 +34,7 @@ class CreateSalesTable extends Migration
       Schema::table("sales",function(Blueprint $table) {
         $table->dropForeign('sales_user_id_foreign');
       });
-      Schema::table("sales",function(Blueprint $table) {
-        $table->dropForeign('sales_product_id_foreign');
-      });
+
         Schema::dropIfExists('sales');
     }
 }

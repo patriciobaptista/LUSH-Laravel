@@ -10,11 +10,11 @@ var addhighlight = document.getElementById('addhighlight');
   highlights.append(newdiv);
   newdiv.append(label, input);
   newdiv.setAttribute('class', 'form-group');
-  input.setAttribute('value', 'Agregar highlight');
+  input.setAttribute('placeholder', 'Add highlight');
   input.setAttribute('name', 'newhighlight[]');
   input.setAttribute('type', 'text');
   input.setAttribute('class', 'form-control');
-  label.innerHTML = "Nuevo Highlight";
+  label.innerHTML = "New Highlight";
 }
 
 var includes = document.getElementById('divIncludes');
@@ -28,11 +28,11 @@ addinclude.onclick = function(){
  includes.append(newdiv);
  newdiv.append(label, input);
  newdiv.setAttribute('class', 'form-group');
- input.setAttribute('value', 'Agregar include');
+ input.setAttribute('placeholder', 'Add include');
  input.setAttribute('name', 'newinclude[]');
  input.setAttribute('type', 'text');
  input.setAttribute('class', 'form-control');
- label.innerHTML = "Nuevo Include";
+ label.innerHTML = "New Include";
 }
 
 }

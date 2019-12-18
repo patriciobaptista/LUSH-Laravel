@@ -13,7 +13,7 @@
   </div>
   <div class="row container pl-5">
     <div class="col-12">
-  <form method="post" action="/ABM/add" enctype="multipart/form-data">
+  <form method="post" action="{{action('ABMcontroller@add')}}" enctype="multipart/form-data">
     @csrf
 
 
@@ -53,12 +53,13 @@
   </div>
   <button id="addInclude" class="btn btn-primary mb-3" type="button" name="button">Agregar include</button>
 
-  </form>
+
   </div>
   <div class="col-12">
     <button type="submit" name="submit" class="btn btn-primary col-3">Submit</button>
     <a href="/ABM/main" class="btn btn-secondary col-3">Back</a>
   </div>
+    </form>
   </div>
   <script type="text/javascript" src="{{asset('js/ABMedit.js')}}"></script>
 @endsection
