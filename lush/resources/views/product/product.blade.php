@@ -20,10 +20,16 @@
                     <div class="col-4">
                       <img id="myImg{{$loop->index}}" src="{{asset('storage/DestinationPhoto/' . $photo->name)}}" alt="{{$product->destination}} ">
                       <div id="myModal" class="modal">
+                  <div class="col-4">
+                    <img id="myImg{{$loop->index}}" src="{{asset('storage/DestinationPhoto/' . $photo->name)}}" alt="{{$product->destination}} ">
+                    <div id="myModal" class="modal">
+
+  <!-- The Close Button -->
+  <span class="close">&times;</span>
 
     <!-- The Close Button -->
     <span class="close">&times;</span>
-  
+
 
     <!-- Modal Content (The Image) -->
     <img class="modal-content" id="img{{$loop->index}}">
@@ -79,6 +85,7 @@
                       </ul>
                     </div>
                   </div>
+
                   <div class="row price-submit">
                     <div class="col-5 p-3">
                       <button class="btn btn-primary" type="submit" name="cart">add to cart</button>
@@ -88,6 +95,10 @@
                     <div class="p-3 col-7">
                       <h2>Total price: ${{$product->price}}</h2>
                     </div>
+
+                  <div class="p-3 col-7">
+                    <h2>Total price: ${{$product->price}}</h2>
+
                   </div>
                 </div>
               </div>
