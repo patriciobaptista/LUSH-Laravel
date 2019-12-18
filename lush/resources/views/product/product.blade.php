@@ -20,7 +20,7 @@
                   <div class="col-4">
                     <img id="myImg{{$loop->index}}" src="{{asset('storage/DestinationPhoto/' . $photo->name)}}" alt="{{$product->destination}} ">
                     <div id="myModal" class="modal">
-                      
+
   <!-- The Close Button -->
   <span class="close">&times;</span>
 
@@ -86,7 +86,7 @@
                     <input type="hidden" name="product_id" value="{{$product->id}}">
                   </div>
                   <div class="p-3 col-7">
-                    <h2>precio final: {{$product->price}}</h2>
+                    <h2>Total price: ${{$product->price}}</h2>
                   </div>
                 </div>
               </div>

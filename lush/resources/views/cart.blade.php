@@ -40,11 +40,10 @@
                   @csrf
                   <ul>
                     <li class="product-name mb-2">{{$product["destination"]}}</li>
-                    <li class="description">Price:$ {{$product["price"]}}</li>
+                    <li class="description">Price:${{$product["price"]}}</li>
                     <li class="description">Quantity: {{$product["quantity"]}}</li>
                     <button class="btn btn-primary" name="id" value="{{$product["id"]}}" type="submit">Delete</button>
                   </ul>
-
 
             </div>
             @endforeach
