@@ -17,9 +17,7 @@
                    @foreach ($product->photos as $photo)
 
 
-                    <div class="col-4">
-                      <img id="myImg{{$loop->index}}" src="{{asset('storage/DestinationPhoto/' . $photo->name)}}" alt="{{$product->destination}} ">
-                      <div id="myModal" class="modal">
+
                   <div class="col-4">
                     <img id="myImg{{$loop->index}}" src="{{asset('storage/DestinationPhoto/' . $photo->name)}}" alt="{{$product->destination}} ">
                     <div id="myModal" class="modal">

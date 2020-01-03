@@ -1,11 +1,12 @@
 @extends('layout')
+@section('title')
+    <meta charset="utf-8">
+    <link rel="stylesheet" type = "text/css" href="{{ asset('css/register.css') }}">
+    <title>Registro</title>
+
+@endsection
 @section('main')
 
-    <head>
-      <meta charset="utf-8">
-      <link rel="stylesheet" type = "text/css" href="{{ asset('css/register.css') }}">
-      <title>Registro</title>
-    </head>
     <body>
       <section class="">
           <article class="container-fluid px-0"> <!-- Background photo -->
@@ -27,7 +28,7 @@
                               @enderror
                         </div>
                         <div id="divName" class="form-group">
-                            
+
                         </div>
                         <div class="form-group">
                             <label for="surname">{{ __('Surname') }}</label>

@@ -32,6 +32,14 @@ text-align: center
   background-color:rgba(0,0,0,0) !important;
   border:none !important;
 }
+#main .sesError {
+  color: red;
+  font-size: 80%;
+}
+#main .sesSuc{
+  color: green;
+  font-size: 80%;
+}
 
 
 #main .feature_divider {

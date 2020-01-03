@@ -1,11 +1,14 @@
 @extends('layout')
+@section('title')
+
+  <meta charset="utf-8">
+  <link rel="stylesheet" type = "text/css" href="{{ asset('css/userprofile.css') }}">
+  <title>LUSH - My Account</title>
+
+@endsection
+
 @section('main')
 
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type = "text/css" href="{{ asset('css/userprofile.css') }}">
-    <title>LUSH - My Account</title>
-  </head>
   <body class="body">
 
     <main id="main" class="container-fluid main">
@@ -106,6 +109,55 @@
               <button type="submit" name="updateDetails" class="btn btn-primary mb-4">Save My Details</button>
           </div>
 
+
+          <div class="section-right mt-3">
+            <h2>Change password</h2>
+              <div class="row border rounded mb-4">
+                <div class="field col-sm-12 col-m-5 col-lg-5 pt-3">
+                  <p>Old password</p>
+                </div>
+                <div class="form-group value col-sm-12 col-m-7 col-lg-7 pt-2">
+
+                    <input type="password" class="form-control transparent" name="old_password" id="old_password" placeholder="Fill old password here" rows="1"></input>
+                </div>
+
+
+                <div class="field col-sm-12 col-m-5 col-lg-5 border-top pt-3">
+                  <p>New password</p>
+                </div>
+                <div class="form-group value col-sm-12 col-m-7 col-lg-7 pt-2">
+                    <input type="password" class="form-control transparent" name="new_password" id="new_password" placeholder="New password" rows="1"></input>
+                </div>
+                <div class="field col-sm-12 col-m-5 col-lg-5 border-top pt-3">
+                  <p>Repeat new password</p>
+                  @if(session()->has('status'))
+                      <span>
+                          <strong class="sesError">{{ session('status') }}</strong>
+                      </span>
+                  @endif
+                  @if(session()->has('success'))
+                      <span>
+                          <strong class="sesSuc">{{ session('success') }}</strong>
+                      </span>
+                  @endif
+                  @if($errors->any())
+                    @foreach($errors->all() as $error)
+                      <span role="alert">
+                          <strong class="sesError">{{ $error }}</strong>
+                      </span>
+                    </br>
+                    @endforeach
+                  @endif
+                </div>
+                <div class="form-group value col-sm-12 col-m-7 col-lg-7 pt-2">
+                    <input type="password" class="form-control transparent" name="new_password_confirmation" id="new_password_confirmation" placeholder="Please repeat your new password" rows="1"></input>
+                </div>
+
+
+              </div>
+              <button type="submit" name="changepassword" class="btn btn-primary mb-4">Save password</button>
+
+          </div>
 
 
 

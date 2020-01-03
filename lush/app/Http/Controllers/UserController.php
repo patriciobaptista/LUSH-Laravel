@@ -7,6 +7,8 @@ use App\Http\Requests;
 use Auth;
 use App\Direccion;
 use App\Carddetail;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Contracts\Validation\Validator;
 
 
 class UserController extends Controller
@@ -65,13 +67,36 @@ class UserController extends Controller
         return view('userprofile', compact('direccion', 'card', 'user'));
       }
 
-        else{
-          return view('userprofile', compact('direccion', 'card', 'user'));
+      elseif($request->has('changepassword')){
+
+        $user = Auth::user();
+
+          $this->validate($request, [
+            'old_password' => 'different:new_password|required|string|min:8',
+            'new_password' => 'required|string|min:8|confirmed',
+            'new_password_confirmation' => 'required|string|min:8'
+          ],
+        [
+          'different' => 'The old password must be different from the new one',
+          'required' => 'The field :attribute must be filled',
+          'string' => 'The field :attribute must be text',
+          'min' => ':attribute must be at least 8 characters long',
+          'confirmed' => 'The new password does not match'
+        ]);
+
+      if(Hash::check($request->old_password, $user->password)){
+          $user->password = Hash::make($request->new_password);
+          $user->save();
+        return redirect()->back()->with('success', 'Your password was changed successfully');
+
+      } else {
+        return redirect()->back()->with('status', 'The password did not match the one in our records!');
+      }
+      }
+       else{
+          return redirect()->back();
         }
+
     }
 
-
-
-
-
-}
+    }
